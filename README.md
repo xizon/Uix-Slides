@@ -48,6 +48,7 @@ Or, upload the plugin to wordpress, Activate it. (Access the path (/wp-content/p
 ![](https://github.com/xizon/Uix-Slides/blob/master/helper/img/plug.jpg)
 
 2.Please check if you have the **2** template files `uix-slides-style.css` and `partials-uix-slides.php` in your templates directory. If you can't find these files, then just copy them from the directory **"/wp-content/plugins/uix-slides/theme_templates/"** to your templates directory.
+
 ![](https://github.com/xizon/Uix-Slides/blob/master/helper/img/temp.jpg)
 
 
@@ -62,6 +63,7 @@ Or, upload the plugin to wordpress, Activate it. (Access the path (/wp-content/p
 5.**Embedding Methods:**
 
 (1) Place `<?php get_template_part( 'partials', 'uix-slides' ); ?>` in your templates.
+
 (2) Use `[uix_slides_output show="-1"]` to add it to your Post, Widgets or Page content. Now this shortcode has one attributes. Slides show at most can be customized using the **"show"** parameter. Show all items if value is **"-1"**. Go to your WordPress admin panel, edit or create a new post (or page). You’ll see our tiny little button in the toolbar, preceded by a separator:
 
 ![](https://github.com/xizon/Uix-Slides/blob/master/helper/img/sc.jpg)
