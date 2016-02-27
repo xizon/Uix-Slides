@@ -47,6 +47,7 @@ Or, upload the plugin to wordpress, Activate it. (Access the path (/wp-content/p
 
 ![](https://github.com/xizon/Uix-Slides/blob/master/helper/img/plug.jpg)
 
+
 2.Please check if you have the **2** template files `uix-slides-style.css` and `partials-uix-slides.php` in your templates directory. If you can't find these files, then just copy them from the directory **"/wp-content/plugins/uix-slides/theme_templates/"** to your templates directory.
 
 ![](https://github.com/xizon/Uix-Slides/blob/master/helper/img/temp.jpg)
@@ -56,6 +57,7 @@ Or, upload the plugin to wordpress, Activate it. (Access the path (/wp-content/p
 
 ![](https://github.com/xizon/Uix-Slides/blob/master/helper/img/add-item.jpg)
 
+
 4.You can pretty much custom every aspect of the look and feel of this page by modifying the `uix-slides-style.css` and `partials-uix-slides.php` template files **(Access the path to the themes directory)**. **Best Practices for Editing WordPress Template Files:**
 
 　(1)  WordPress comes with a theme and plugin editor as part of the core functionality. You can find it in your install by going to **"Appearance > Editor"** from your sidebar.
@@ -63,6 +65,7 @@ Or, upload the plugin to wordpress, Activate it. (Access the path (/wp-content/p
 ![](https://github.com/xizon/Uix-Slides/blob/master/helper/img/editor.jpg)
 
 　(2) You can connect to your site via an **FTP** client, download a copy of the file you want to change, make the changes and then upload the file back to the server, overwriting the file that’s on the server.
+
 
 
 5.**Adding Uix Slides to Web Pages.**
@@ -78,6 +81,7 @@ Use `[uix_slides_output show="-1"]` to add it to your Post, Widgets or Page cont
 　(2)  **Template tags** - Add a simple PHP function to one of your theme's template files. 
 
 Place `<?php get_template_part( 'partials', 'uix-slides' ); ?>` in your templates.
+
 
 
 6.The Uix Slides plugin allows users to easily enable a "Customizer Page" to themes. Go to **"Appearance -> Customize"**.
