@@ -31,7 +31,7 @@ Or, upload the plugin to wordpress, Activate it. (Access the path (/wp-content/p
         </p> 
         
          <p>
-           <?php _e( '4. You can pretty much custom every aspect of the look and feel of this page by modifying the <code>"uix-slides-style.css"</code> and <code>"partials-uix-slides.php"</code> template files <strong>(Access the path to the themes directory)</strong> . Best Practices for Editing WordPress Template Files:', 'uix-slides' ); ?>
+           <?php _e( '4. You can pretty much custom every aspect of the look and feel of this page by modifying the <code>*.php</code> template files <strong>(Access the path to the themes directory)</strong> . Best Practices for Editing WordPress Template Files:', 'uix-slides' ); ?>
         </p> 
         <p>
            <?php _e( '&nbsp;&nbsp;&nbsp;&nbsp;(1) WordPress comes with a theme and plugin editor as part of the core functionality. You can find it in your install by going to <strong>"Appearance > Editor"</strong> from your sidebar.', 'uix-slides' ); ?>
