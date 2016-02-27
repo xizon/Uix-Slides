@@ -2,7 +2,7 @@
 Contributors: UIUX Lab
 Author URI: http://uiux.cc
 Plugin URL: http://uiux.cc/wp-plugins/uix-slides/
-Tags: slides, slide, post type
+Tags: slides, slider, post type
 Requires at least: 4.2
 Tested up to: 4.4.2
 Stable tag: 1.0.0
