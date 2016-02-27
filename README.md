@@ -58,24 +58,24 @@ Or, upload the plugin to wordpress, Activate it. (Access the path (/wp-content/p
 
 4.You can pretty much custom every aspect of the look and feel of this page by modifying the `uix-slides-style.css` and `partials-uix-slides.php` template files **(Access the path to the themes directory)**. **Best Practices for Editing WordPress Template Files:**
 
- ( 1 )  WordPress comes with a theme and plugin editor as part of the core functionality. You can find it in your install by going to **"Appearance > Editor"** from your sidebar.
+　(1)  WordPress comes with a theme and plugin editor as part of the core functionality. You can find it in your install by going to **"Appearance > Editor"** from your sidebar.
 
 ![](https://github.com/xizon/Uix-Slides/blob/master/helper/img/editor.jpg)
 
- ( 2 )  You can connect to your site via an **FTP** client, download a copy of the file you want to change, make the changes and then upload the file back to the server, overwriting the file that’s on the server.
+　(2) You can connect to your site via an **FTP** client, download a copy of the file you want to change, make the changes and then upload the file back to the server, overwriting the file that’s on the server.
 
 
 5.**Adding Uix Slides to Web Pages.**
 
 There are two different ways you can add the Uix Slides widget to your site's pages:
 
- ( 1 )  **Shortcode** - Embed a shortcode into the editor of any post, page, or custom post type. 
+　(1)  **Shortcode** - Embed a shortcode into the editor of any post, page, or custom post type. 
 
 Use `[uix_slides_output show="-1"]` to add it to your Post, Widgets or Page content. Now this shortcode has one attributes. Slides show at most can be customized using the **"show"** parameter. Show all items if value is **"-1"**. Go to your WordPress admin panel, edit or create a new post (or page). You’ll see our tiny little button in the toolbar, preceded by a separator:
 
 ![](https://github.com/xizon/Uix-Slides/blob/master/helper/img/sc.jpg)
   
- ( 2 )  **Template tags** - Add a simple PHP function to one of your theme's template files. 
+　(2)  **Template tags** - Add a simple PHP function to one of your theme's template files. 
 
 Place `<?php get_template_part( 'partials', 'uix-slides' ); ?>` in your templates.
 
