@@ -8,13 +8,15 @@ if ( class_exists( 'Kirki' )  && class_exists( 'UixSlides' )  ) {
 	
 	global $wp_customize;
 	
+	$uix_slides_kirki_config_id = 'uiuxlabtheme_kirki_custom';
+	
 	/*
 	*
 	* Kirki customizer configuration
 	*
 	*/
 	
-	Kirki::add_config( 'uix_slides_kirki_custom', array(
+	Kirki::add_config( $uix_slides_kirki_config_id, array(
 		'capability'    => 'edit_theme_options',
 		'option_type'   => 'theme_mod',
 	) );
@@ -64,7 +66,7 @@ if ( class_exists( 'Kirki' )  && class_exists( 'UixSlides' )  ) {
 		
 
 
-	Kirki::add_field( 'uix_slides_kirki_custom', array(
+	Kirki::add_field( $uix_slides_kirki_config_id, array(
 		'type'        => 'radio',
 		'settings'    => 'custom_uix_slides_effect',
 		'label'       => __( 'Effect', 'uix-slides' ),
@@ -78,7 +80,7 @@ if ( class_exists( 'Kirki' )  && class_exists( 'UixSlides' )  ) {
 		),
 	) );
 	
-	Kirki::add_field( 'uix_slides_kirki_custom', array(
+	Kirki::add_field( $uix_slides_kirki_config_id, array(
 		'type'        => 'switch',
 		'settings'    => 'custom_uix_slides_auto',
 		'label'       => __( 'Automatically Transition', 'uix-slides' ),
@@ -88,7 +90,7 @@ if ( class_exists( 'Kirki' )  && class_exists( 'UixSlides' )  ) {
 		'priority'    => 10,
 	) );
 	
-	Kirki::add_field( 'uix_slides_kirki_custom', array(
+	Kirki::add_field( $uix_slides_kirki_config_id, array(
 		'type'        => 'slider',
 		'settings'    => 'custom_uix_slides_effect_duration',
 		'label'       => __( 'Speed of images appereance in ms', 'uix-slides' ),
@@ -104,7 +106,7 @@ if ( class_exists( 'Kirki' )  && class_exists( 'UixSlides' )  ) {
 	) );
 
 
-	Kirki::add_field( 'uix_slides_kirki_custom', array(
+	Kirki::add_field( $uix_slides_kirki_config_id, array(
 		'type'        => 'slider',
 		'settings'    => 'custom_uix_slides_speed',
 		'label'       => __( 'Delay between images in ms', 'uix-slides' ),
@@ -120,7 +122,7 @@ if ( class_exists( 'Kirki' )  && class_exists( 'UixSlides' )  ) {
 	) );
 
 	
-	Kirki::add_field( 'uix_slides_kirki_custom', array(
+	Kirki::add_field( $uix_slides_kirki_config_id, array(
 		'type'        => 'switch',
 		'settings'    => 'custom_uix_slides_arr_nav',
 		'label'       => __( 'Show Arrow Navigation', 'uix-slides' ),
@@ -131,7 +133,7 @@ if ( class_exists( 'Kirki' )  && class_exists( 'UixSlides' )  ) {
 	) );
 	
 
-	Kirki::add_field( 'uix_slides_kirki_custom', array(
+	Kirki::add_field( $uix_slides_kirki_config_id, array(
 		'type'        => 'switch',
 		'settings'    => 'custom_uix_slides_paging_nav',
 		'label'       => __( 'Show Paging Navigation', 'uix-slides' ),
@@ -142,7 +144,7 @@ if ( class_exists( 'Kirki' )  && class_exists( 'UixSlides' )  ) {
 	) );
 
 
-	Kirki::add_field( 'uix_slides_kirki_custom', array(
+	Kirki::add_field( $uix_slides_kirki_config_id, array(
 		'type'        => 'switch',
 		'settings'    => 'custom_uix_slides_animloop',
 		'label'       => __( 'Animation Loop', 'uix-slides' ),
@@ -152,7 +154,7 @@ if ( class_exists( 'Kirki' )  && class_exists( 'UixSlides' )  ) {
 		'priority'    => 10,
 	) );
 
-	Kirki::add_field( 'uix_slides_kirki_custom', array(
+	Kirki::add_field( $uix_slides_kirki_config_id, array(
 		'type'        => 'switch',
 		'settings'    => 'custom_uix_slides_smoothheight',
 		'label'       => __( 'Smooth Height', 'uix-slides' ),
@@ -163,7 +165,7 @@ if ( class_exists( 'Kirki' )  && class_exists( 'UixSlides' )  ) {
 	) );
 
 
-	Kirki::add_field( 'uix_slides_kirki_custom', array(
+	Kirki::add_field( $uix_slides_kirki_config_id, array(
 		'type'        => 'switch',
 		'settings'    => 'custom_uix_slides_textinfo',
 		'label'       => __( 'Show Text Information', 'uix-slides' ),
@@ -174,7 +176,7 @@ if ( class_exists( 'Kirki' )  && class_exists( 'UixSlides' )  ) {
 	) );
 
 
-	Kirki::add_field( 'uix_slides_kirki_custom', array(
+	Kirki::add_field( $uix_slides_kirki_config_id, array(
 		'type'        => 'custom',
 		'settings'    => 'custom_uix_slides_box_height_title',
 		'label'       => __( 'Slider Height', 'uix-slides' ),
@@ -184,7 +186,7 @@ if ( class_exists( 'Kirki' )  && class_exists( 'UixSlides' )  ) {
 		'priority'    => 10,
 	) );
 
-	Kirki::add_field( 'uiuxlabtheme_kirki_custom', array(
+	Kirki::add_field( $uix_slides_kirki_config_id, array(
 		'type'        => 'checkbox',
 		'settings'    => 'custom_uix_slides_box_autoheight',
 		'label'       => __( 'Automatic height', 'uix-slides' ),
@@ -195,7 +197,7 @@ if ( class_exists( 'Kirki' )  && class_exists( 'UixSlides' )  ) {
 	
 	) );
 	
-	Kirki::add_field( 'uiuxlabtheme_kirki_custom', array(
+	Kirki::add_field( $uix_slides_kirki_config_id, array(
 		'type'        => 'dimension',
 		'settings'    => 'custom_uix_slides_box_height',
 		'label'       => '',
@@ -215,7 +217,7 @@ if ( class_exists( 'Kirki' )  && class_exists( 'UixSlides' )  ) {
 		),
 	) );
 	
-	Kirki::add_field( 'uix_slides_kirki_custom', array(
+	Kirki::add_field( $uix_slides_kirki_config_id, array(
 		'type'        => 'custom',
 		'settings'    => 'custom_uix_slides_box_width_title',
 		'label'       => __( 'Slider Width', 'uix-slides' ),
@@ -225,7 +227,7 @@ if ( class_exists( 'Kirki' )  && class_exists( 'UixSlides' )  ) {
 		'priority'    => 10,
 	) );
 	
-	Kirki::add_field( 'uiuxlabtheme_kirki_custom', array(
+	Kirki::add_field( $uix_slides_kirki_config_id, array(
 		'type'        => 'checkbox',
 		'settings'    => 'custom_uix_slides_box_fullwidth',
 		'label'       => __( 'Full Width', 'uix-slides' ),
@@ -237,7 +239,7 @@ if ( class_exists( 'Kirki' )  && class_exists( 'UixSlides' )  ) {
 	) );
 	
 
-	Kirki::add_field( 'uiuxlabtheme_kirki_custom', array(
+	Kirki::add_field( $uix_slides_kirki_config_id, array(
 		'type'        => 'dimension',
 		'settings'    => 'custom_uix_slides_box_width',
 		'label'       => '',
@@ -260,7 +262,7 @@ if ( class_exists( 'Kirki' )  && class_exists( 'UixSlides' )  ) {
 
 
 	
-	Kirki::add_field( 'uix_slides_kirki_custom', array(
+	Kirki::add_field( $uix_slides_kirki_config_id, array(
 		'type'        => 'custom',
 		'settings'    => 'custom_uix_slides_single_size_title',
 		'label'       => __( 'Image Size for Entry', 'uix-slides' ),
@@ -271,7 +273,7 @@ if ( class_exists( 'Kirki' )  && class_exists( 'UixSlides' )  ) {
 	) );
 
 
-	Kirki::add_field( 'uix_slides_kirki_custom', array(
+	Kirki::add_field( $uix_slides_kirki_config_id, array(
 		'type'        => 'text',
 		'settings'    => 'custom_uix_slides_single_size_w',
 		'label'       => '',
@@ -281,7 +283,7 @@ if ( class_exists( 'Kirki' )  && class_exists( 'UixSlides' )  ) {
 		'priority'    => 10
 	) );
 	
-	Kirki::add_field( 'uix_slides_kirki_custom', array(
+	Kirki::add_field( $uix_slides_kirki_config_id, array(
 		'type'        => 'text',
 		'settings'    => 'custom_uix_slides_single_size_h',
 		'label'       => '',
@@ -292,7 +294,7 @@ if ( class_exists( 'Kirki' )  && class_exists( 'UixSlides' )  ) {
 	) );
 	
 
-	Kirki::add_field( 'uix_slides_kirki_custom', array(
+	Kirki::add_field( $uix_slides_kirki_config_id, array(
 		'type'        => 'custom',
 		'settings'    => 'custom_uix_slides_fsize_title',
 		'label'       => __( 'Font Size', 'uix-slides' ),
@@ -302,7 +304,7 @@ if ( class_exists( 'Kirki' )  && class_exists( 'UixSlides' )  ) {
 		'priority'    => 10,
 	) );
 
-	Kirki::add_field( 'uiuxlabtheme_kirki_custom', array(
+	Kirki::add_field( $uix_slides_kirki_config_id, array(
 		'type'        => 'dimension',
 		'settings'    => 'custom_uix_slides_fsize_t',
 		'label'       => '',
@@ -316,7 +318,7 @@ if ( class_exists( 'Kirki' )  && class_exists( 'UixSlides' )  ) {
 	) );
 	
 	
-	Kirki::add_field( 'uiuxlabtheme_kirki_custom', array(
+	Kirki::add_field( $uix_slides_kirki_config_id, array(
 		'type'        => 'dimension',
 		'settings'    => 'custom_uix_slides_fsize_c',
 		'label'       => '',
@@ -376,7 +378,7 @@ if ( class_exists( 'Kirki' )  && class_exists( 'UixSlides' )  ) {
     add_action( 'customize_controls_print_scripts', 'uix_slides_view_style' );
 
 
-	Kirki::add_field( 'uix_slides_kirki_custom', array(
+	Kirki::add_field( $uix_slides_kirki_config_id, array(
 		'type'        => 'custom',
 		'settings'    => 'custom_uix_slides_css_tip',
 		'label'       => __( 'Custom CSS', 'uix-slides' ),
@@ -390,7 +392,7 @@ if ( class_exists( 'Kirki' )  && class_exists( 'UixSlides' )  ) {
 		'priority'    => 10
 	) );
 	
-	Kirki::add_field( 'uix_slides_kirki_custom', array(
+	Kirki::add_field( $uix_slides_kirki_config_id, array(
 		'type'        => 'code',
 		'settings'    => 'custom_uix_slides_css',
 		'label'       => '',
