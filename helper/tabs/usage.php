@@ -78,5 +78,14 @@ Or, upload the plugin to wordpress, Activate it. (Access the path (/wp-content/p
         <p>
            <img src="<?php echo UixSlides::plug_directory(); ?>helper/img/customize.jpg" alt="">
         </p>  
+        
+        <p>
+           <?php _e( '7. You can overview the original styles to overwrite it. It will be on creating new styles to your website, without modifying original <code>.css<code> files. Go to <strong>"Appearance -> Customize"</strong>.', 'uix-slides' ); ?>
+        </p>   
+        <p>
+           <img src="<?php echo UixSlides::plug_directory(); ?>helper/img/css.jpg" alt="">
+        </p>  
+
+        
 
 <?php } ?>
