@@ -36,7 +36,7 @@ Or, upload the plugin to wordpress, Activate it. (Access the path (/wp-content/p
 
 3. Create uix slides item and publish slides then.
 
-4. You can pretty much custom every aspect of the look and feel of this page by modifying the "uix-slides-style.css" and "partials-uix-slides.php" template files (Access the path to the themes directory) . Best Practices for Editing WordPress Template Files:
+4. You can pretty much custom every aspect of the look and feel of this page by modifying the "*.php" template files (Access the path to the themes directory) . Best Practices for Editing WordPress Template Files:
 
   (1) WordPress comes with a theme and plugin editor as part of the core functionality. You can find it in your install by going to "Appearance > Editor" from your sidebar.
 
@@ -50,6 +50,8 @@ There are two different ways you can add the Uix Slides widget to your site's pa
   (1) Shortcode - Embed a shortcode into the editor of any post, page, or custom post type. 
       
       Use [uix_slides_output show="-1"] to add it to your Post, Widgets or Page content. Now this shortcode has one attributes. Slides show at most can be customized using the "show" parameter. Show all items if value is '-1'.
+      
+      Go to your WordPress admin panel, edit or create a new post (or page). You’ll see a Uix Slides button in the toolbar.
   
   (2) Template tags - Add a simple PHP function to one of your theme's template files. 
   
@@ -57,6 +59,8 @@ There are two different ways you can add the Uix Slides widget to your site's pa
 
  
 6. The Uix Slides plugin allows users to easily enable a "Customizer Page" to themes. Go to "Appearance -> Customize". 
+
+7. You can overview the original styles to overwrite it. It will be on creating new styles to your website, without modifying original ".css" files. Go to "Appearance -> Customize".
 
 
 == Changelog ==
