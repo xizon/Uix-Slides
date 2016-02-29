@@ -186,7 +186,9 @@ function uix_slides_remove_permalink() {
 	if( get_post_type() === 'uix-slides' ) {
 			echo '
 			<style>
-		    	#edit-slug-box{display:none;}
+		    	#edit-slug-box,
+				#post-preview
+				{display:none;}
 			</style>';
 	}
 }
