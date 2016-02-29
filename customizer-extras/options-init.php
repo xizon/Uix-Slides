@@ -8,7 +8,7 @@ if ( class_exists( 'Kirki' )  && class_exists( 'UixSlides' )  ) {
 	
 	global $wp_customize;
 	
-	$uix_slides_kirki_config_id = 'uiuxlabtheme_kirki_custom';
+	$uix_slides_kirki_config_id = 'uix_slides_kirki_custom';
 	
 	/*
 	*
