@@ -20,7 +20,7 @@ Insert slides anywhere on your site using a custom post type. Powered by jQuery 
 
 
 = Credits and Special Thanks =
- - Automatic Theme & Plugin Updater for Self-Hosted Themes/Plugins (https://github.com/jeremyclark13/automatic-theme-plugin-update)
+ - Plugin Update Checker Library (http://w-shadow.com)
  - Custom Metaboxes and Fields (https://github.com/WebDevStudios/Custom-Metaboxes-and-Fields-for-WordPress)
  - Kirki (http://kirki.org/)
  - Flexslider (http://flexslider.woothemes.com/)

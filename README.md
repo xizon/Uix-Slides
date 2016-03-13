@@ -34,7 +34,7 @@ Initial Release.
 
 #####I would like to give special thanks to credits. The following is a guide to the list of credits for this plugin:
 
-- [Automatic Theme & Plugin Updater for Self-Hosted Themes/Plugins](https://github.com/jeremyclark13/automatic-theme-plugin-update)
+- [Plugin Update Checker Library](http://w-shadow.com)
 - [Custom Metaboxes and Fields](https://github.com/WebDevStudios/Custom-Metaboxes-and-Fields-for-WordPress)
 - [Kirki](http://kirki.org/)
 - [Flexslider](https://github.com/woothemes/FlexSlider)
