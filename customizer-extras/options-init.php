@@ -294,7 +294,6 @@ if ( class_exists( 'Kirki' )  && class_exists( 'UixSlides' )  ) {
 	) );
 	
 
-<<<<<<< HEAD
 
 
 	/**
@@ -302,8 +301,6 @@ if ( class_exists( 'Kirki' )  && class_exists( 'UixSlides' )  ) {
 	 * 
 	 */
 	
-=======
->>>>>>> origin/master
 	Kirki::add_field( $uix_slides_kirki_config_id, array(
 		'type'        => 'custom',
 		'settings'    => 'custom_uix_slides_gf_title',
@@ -322,7 +319,6 @@ if ( class_exists( 'Kirki' )  && class_exists( 'UixSlides' )  ) {
 	 */
 
 	Kirki::add_field( $uix_slides_kirki_config_id, array(
-<<<<<<< HEAD
 		'type'     => 'select',
 		'settings' => 'custom_uix_slides_google_font_slidetitle_family',
 		'description'    => __( 'Font Family', 'uix-slides' ),
@@ -335,17 +331,6 @@ if ( class_exists( 'Kirki' )  && class_exists( 'UixSlides' )  ) {
 				'element'  => '.uix-slides-homepage-title',
 				'property' => 'font-family',
 			),
-=======
-		'type'        => 'dimension',
-		'settings'    => 'custom_uix_slides_fsize_t',
-		'label'       => '',
-		'description' => __( 'Slider Title', 'uix-slides' ),
-		'section'     => 'panel-theme-uix-slides',
-		'default'     => '2em',
-		'priority'    => 10,
-		'choices' => array(
-			'units' => array( 'em', 'px' )
->>>>>>> origin/master
 		),
 		
 		
@@ -354,7 +339,6 @@ if ( class_exists( 'Kirki' )  && class_exists( 'UixSlides' )  ) {
 
 	
 	Kirki::add_field( $uix_slides_kirki_config_id, array(
-<<<<<<< HEAD
 		'type'     => 'slider',
 		'settings' => 'custom_uix_slides_google_font_slidetitle_weight',
 		'description'    => __( 'Font Weight', 'uix-slides' ),
@@ -417,12 +401,6 @@ if ( class_exists( 'Kirki' )  && class_exists( 'UixSlides' )  ) {
 		'settings'    => 'custom_uix_slides_gf_caption',
 		'label'       => __( 'Slider Title', 'uix-slides' ),
 		'description' => '',
-=======
-		'type'        => 'dimension',
-		'settings'    => 'custom_uix_slides_fsize_c',
-		'label'       => '',
-		'description' => __( 'Slider Caption', 'uix-slides' ),
->>>>>>> origin/master
 		'section'     => 'panel-theme-uix-slides',
 		'default'     => '',
 		'priority'    => 10,
