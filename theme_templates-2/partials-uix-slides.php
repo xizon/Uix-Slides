@@ -32,7 +32,11 @@ $uix_slides_query_slides = new WP_Query(
 );
 
 
-add_action( 'wp_footer', 'uix_slides_script', 100 );
+
+if ( $uix_slides_query_slides->posts && is_array ( $uix_slides_query_slides->posts ) ) { 
+    add_action( 'wp_footer', 'uix_slides_script', 100 );
+}
+
 
 if ( !function_exists( 'uix_slides_script' ) ) {
 	function uix_slides_script() {
@@ -58,7 +62,7 @@ if ( !function_exists( 'uix_slides_script' ) ) {
 				smoothHeight      : <?php echo ( get_theme_mod( 'custom_uix_slides_smoothheight', false ) ) ? 'true' : 'false'; ?>,
 				controlNav        : <?php echo ( get_theme_mod( 'custom_uix_slides_paging_nav', false ) ) ? 'true' : 'false'; ?>,
 				directionNav      : <?php echo ( get_theme_mod( 'custom_uix_slides_arr_nav', true ) ) ? 'true' : 'false'; ?>,
-				animationLoop     : <?php echo ( get_theme_mod( 'custom_uix_slides_animloop', true ) ) ? 'true' : 'false'; ?>,
+				animationLoop     : <?php echo ( get_theme_mod( 'custom_uix_slides_animloop', false ) ) ? 'true' : 'false'; ?>,
 				selector          : '.slides > li',
 				prevText          : '<span class="flex-custom-dir flex-custom-dir-prev"></span>',
 				nextText          : '<span class="flex-custom-dir flex-custom-dir-next"></span>',

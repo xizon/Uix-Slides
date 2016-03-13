@@ -14,7 +14,7 @@ class UixSlides {
 	
 	const PREFIX = 'uix';
 	const HELPER = 'uix-slides-helper';
-	const NOTICEID = 'uix-slides-notice-helper';
+	const NOTICEID = 'uix-slides-helper-tip';
 
 	
 	/**
@@ -32,7 +32,6 @@ class UixSlides {
 		add_action( 'current_screen', array( __CLASS__, 'usage_notice' ) );
 		add_action( 'current_screen', array( __CLASS__, 'do_register_shortcodes' ) );
 		add_action( 'admin_init', array( __CLASS__, 'check_update' ) );
-		add_action( 'admin_init', array( __CLASS__, 'templates' ) );
 		add_action( 'admin_init', array( __CLASS__, 'tc_i18n' ) );
 		add_action( 'admin_init', array( __CLASS__, 'load_helper' ) );
 		add_action( 'admin_init', array( __CLASS__, 'nag_ignore' ) );
@@ -64,8 +63,12 @@ class UixSlides {
 		wp_enqueue_style( 'cherryfullBgSlider-1.0', self::plug_directory() .'assets/css/cherryfullBgSlider.css', false, '1.0', 'all' );
 		
 		//Main stylesheets and scripts to Front-End
-		wp_enqueue_style( self::PREFIX . '-slides-frontend-style', get_template_directory_uri() .'/uix-slides-style.css', false, self::ver(), 'all');
-			
+		if( !self::tempfile_exists() ) {
+			wp_enqueue_style( self::PREFIX . '-contact-frontend-style', self::plug_directory() .'theme_templates/uix-slides-style.css', false, self::ver(), 'all');
+		} else {
+			wp_enqueue_style( self::PREFIX . '-slides-frontend-style', get_template_directory_uri() .'/uix-slides-style.css', false, self::ver(), 'all');
+		}
+		
 
 	}
 	
@@ -110,6 +113,23 @@ class UixSlides {
 		
 
 	}
+	
+	/*
+	 * The function finds the position of the first occurrence of a string inside another string.
+	 *
+	 * As strpos may return either FALSE (substring absent) or 0 (substring at start of string), strict versus loose equivalency operators must be used very carefully.
+	 *
+	 */
+	public static function inc_str( $str, $incstr ) {
+	
+		if ( mb_strlen( strpos( $str, $incstr ), 'UTF8' ) > 0 ) {
+			return true;
+		} else {
+			return false;
+		}
+
+	}
+
 	
 	
 	
@@ -219,7 +239,7 @@ class UixSlides {
 		  //Check if screen’s ID, base, post type, and taxonomy, among other data points
 		  $currentScreen = get_current_screen();
 	
-		  if( $currentScreen->base === "post" || mb_strlen( strpos( $currentScreen->base, '_page_' ), 'UTF8' ) > 0 ) {
+		  if( $currentScreen->base === "post" || self::inc_str( $currentScreen->base, '_page_' ) ) {
 			
 				require_once 'shortcodes/backstage-init.php';
 		
@@ -296,8 +316,9 @@ class UixSlides {
 		  //Check if screen’s ID, base, post type, and taxonomy, among other data points
 		  $currentScreen = get_current_screen();
 
-		  if( ( mb_strlen( strpos( $currentScreen->id, 'uix_slides' ), 'UTF8' ) > 0 || mb_strlen( strpos( $currentScreen->id, 'uix-slides' ), 'UTF8' ) > 0 ) && mb_strlen( strpos( $currentScreen->id, '_page_' ), 'UTF8' ) <= 0 ) {
+		  if( ( self::inc_str( $currentScreen->id, 'uix_slides' ) || self::inc_str( $currentScreen->id, 'uix-slides' ) ) && !self::inc_str( $currentScreen->id, '_page_' ) ) {
 			  add_action( 'admin_notices', array( __CLASS__, 'usage_notice_app' ) );
+			  add_action( 'admin_notices', array( __CLASS__, 'template_notice_required' ) );
 		  }
 		
 	
@@ -315,12 +336,26 @@ class UixSlides {
 				<a href="' . admin_url( "admin.php?page=".self::HELPER."&tab=usage" ) . '">' . __( 'How to use?', 'uix-slides' ) . '</a>
 				 | 
 			';
-			printf( __( '<a href="%1$s">Hide Notice</a>' ), '?post_type=uix-slides&'.self::NOTICEID.'=0');
+			printf( __( '<a href="%1$s">Hide Notice</a>' ), '?post_type='.self::get_slug().'&'.self::NOTICEID.'=0');
 			
 			echo "</p></div>";
 		}
 	
 	}	
+	
+	public static function template_notice_required() {
+		
+		if( !self::tempfile_exists() ) {
+			echo '
+				<div class="error notice">
+					<p>' . __( '<strong>You need to create Uix Slides template files in your templates directory. You can create the files on the WordPress admin panel.</strong>', 'uix-slides' ) . ' <a class="button button-primary" href="' . admin_url( "admin.php?page=".self::HELPER."&tab=temp" ) . '">' . __( 'Create now!', 'uix-slides' ) . '</a><br>' . __( 'As a workaround you can use FTP, access the Uix Slides template files path <code>/wp-content/plugins/uix-slides/theme_templates/</code> and upload files to your theme templates directory <code>/wp-content/themes/{your-theme}/</code>. ', 'uix-slides' ) . '</p>
+				</div>
+			';
+	
+		}
+	
+	}	
+	
 	
 	public static function nag_ignore() {
 		    global $current_user;
@@ -340,6 +375,20 @@ class UixSlides {
 		    }
 	}
 	
+	/*
+	 * Checks whether a template file or directory exists
+	 *
+	 *
+	 */
+	public static function tempfile_exists() {
+
+	      if( !file_exists( get_stylesheet_directory() . '/partials-uix-slides.php' ) ) {
+			  return false;
+		  } else {
+			  return true;
+		  }
+
+	}
 	
 	
 	
@@ -354,63 +403,138 @@ class UixSlides {
 
 	}
 	
-	
-	
 	/*
-	 * Custom post extensions
+	 * Copy template files to your theme directory
 	 *
 	 *
 	 */
-	public static function post_ex() {
 	
-		require_once 'post-extensions/post-extensions-init.php';
+	public static function templates( $nonceaction, $nonce ){
+		
+		  global $wp_filesystem;
+			
+		  $filenames = array();
+		  $filepath = WP_PLUGIN_DIR .'/'.self::get_slug(). '/theme_templates/';
+		  $themepath = get_stylesheet_directory() . '/';
+		  $fileable = true;
 
 		
-	}
-	
-	
-	
-	/*
-	 * Move template files to your theme directory
-	 *
-	 *
-	 */
-	public static function templates() {
+		  $url = wp_nonce_url( $nonce, $nonceaction );
 		
+		  $contentdir = $filepath; 
+		  
+		  if ( self::wpfilesystem_connect_fs( $url, '', $contentdir, '' ) ) {
+	
+				foreach ( glob( dirname(__FILE__). "/theme_templates/*") as $file ) {
+					$filenames[] = str_replace( dirname(__FILE__). "/theme_templates/", '', $file );
+				}	
 		
-		$filenames = array();
-		$filepath = WP_PLUGIN_DIR .'/'.self::get_slug(). '/theme_templates/';
-		$themepath = get_stylesheet_directory() . '/';
+				foreach ( $filenames as $filename ) {
+					
+					if ( ! file_exists( $themepath . $filename ) ) {
+						
+						$filecontent = $wp_filesystem->get_contents( $filepath . $filename );
+						$wp_filesystem->put_contents(  $themepath . $filename, $filecontent, FS_CHMOD_FILE );
+			
+					} 
+				}
+		
+				return __( '<div class="notice notice-success"><p>Operation successfully completed!</p></div>', 'uix-slides' );
+				
+		  } 
+	}	 
 
-		foreach ( glob( dirname(__FILE__). "/theme_templates/*") as $file ) {
-			$filenames[] = str_replace( dirname(__FILE__). "/theme_templates/", '', $file );
-		}	
-		
-	
-		self::init_filesystem();
-		global $wp_filesystem;
-
-		foreach ( $filenames as $filename ) {
-			if ( ! file_exists( $themepath . $filename ) ) {
-				$filecontent = $wp_filesystem->get_contents( $filepath . $filename );
-				$wp_filesystem->put_contents(  $themepath . $filename, $filecontent, FS_CHMOD_FILE);
-			} 
-		}
-		
-	}
-	
 
 	/**
 	 * Initialize the WP_Filesystem
+	 * 
+	 * Example:
+	 
+            $output = "";
+			$wpnonce_url = 'edit.php?post_type='.UixSlides::get_slug().'&page='.UixSlides::HELPER;
+			$wpnonce_action = 'temp-filesystem-nonce';
+
+            if ( !empty( $_POST ) ) {
+				
+				
+                  $output = UixSlides::wpfilesystem_write_file( $wpnonce_action, $wpnonce_url, 'helper/tabs/', '1.txt', 'This is test.' );
+				  echo $output;
+			
+            } else {
+				
+				wp_nonce_field( $wpnonce_action );
+				echo '<p class="submit"><input type="submit" name="submit" id="submit" class="button button-primary" value="'.__( 'Click This Button to Copy Files', 'uix-slides' ).'"  /></p>';
+				
+			}
 	 *
 	 */
-	public static function init_filesystem() {
-		global $wp_filesystem;
-		if ( empty( $wp_filesystem ) ) {
-			require_once ( ABSPATH . '/wp-admin/includes/file.php' );
-			WP_Filesystem();
-		}
+	public static function wpfilesystem_connect_fs( $url, $method, $context, $fields = null) {
+		  global $wp_filesystem;
+		  if ( false === ( $credentials = request_filesystem_credentials( $url, $method, false, $context, $fields) ) ) {
+			return false;
+		  }
+		
+		  //check if credentials are correct or not.
+		  if( !WP_Filesystem( $credentials ) ) {
+			request_filesystem_credentials( $url, $method, true, $context);
+			return false;
+		  }
+		
+		  return true;
 	}
+	
+	public static function wpfilesystem_write_file( $nonceaction, $nonce, $path, $pathname, $text ){
+		  global $wp_filesystem;
+		  
+		
+		  $url = wp_nonce_url( $nonce, $nonceaction );
+		
+		  $contentdir = trailingslashit( WP_PLUGIN_DIR .'/'.self::get_slug() ).$path; 
+		  
+		  if ( self::wpfilesystem_connect_fs( $url, '', $contentdir, '' ) ) {
+			  
+				$dir = $wp_filesystem->find_folder( $contentdir );
+				$file = trailingslashit( $dir ) . $pathname;
+				$wp_filesystem->put_contents( $file, $text, FS_CHMOD_FILE );
+			
+				return __( '<div class="notice notice-success"><p>Operation successfully completed!</p></div>', 'uix-slides' );
+				
+		  } 
+	}	
+	
+	 
+	public static function wpfilesystem_read_file( $nonceaction, $nonce, $path, $pathname, $type = 'plugin' ){
+		  global $wp_filesystem;
+		
+		  $url = wp_nonce_url( $nonce, $nonceaction );
+	
+		  if ( $type == 'plugin' ) {
+			  $contentdir = trailingslashit( WP_PLUGIN_DIR .'/'.self::get_slug() ).$path; 
+		  } 
+		  if ( $type == 'theme' ) {
+			  $contentdir = trailingslashit( get_template_directory() ).$path; 
+		  } 	  
+		
+		  
+		  if ( self::wpfilesystem_connect_fs( $url, '', $contentdir ) ) {
+			  
+				$dir = $wp_filesystem->find_folder( $contentdir );
+				$file = trailingslashit( $dir ) . $pathname;
+				
+				
+				if( $wp_filesystem->exists( $file ) ) {
+					
+				    return $wp_filesystem->get_contents( $file );
+	
+				} else {
+					return '';
+				}
+		
+		
+		  } 
+	}	 
+	
+	
 	
 
 	/*
@@ -431,7 +555,18 @@ class UixSlides {
 	}
 	
 
+	/*
+	 * Custom post extensions
+	 *
+	 *
+	 */
+	public static function post_ex() {
+	
+		require_once 'post-extensions/post-extensions-init.php';
 
+		
+	}
+	
 
 
 	/*
@@ -452,10 +587,7 @@ class UixSlides {
 			$custom_css_wp_customizer .= '#uix-slides-wrap{'.$c_width.''.$c_height.'}';
 		
 		}
-		
-		$custom_css_wp_customizer .= ( !empty( get_theme_mod( 'custom_uix_slides_fsize_t' ) ) ) ? '.uix-slides-homepage-title{font-size:'.get_theme_mod( 'custom_uix_slides_fsize_t' ).';}' : '';
-		$custom_css_wp_customizer .= ( !empty( get_theme_mod( 'custom_uix_slides_fsize_c' ) ) ) ? '.uix-slides-homepage-caption{font-size:'.get_theme_mod( 'custom_uix_slides_fsize_c' ).';}' : '';
-	
+
 		wp_add_inline_style( self::PREFIX . '-slides-frontend-style', $custom_css.$custom_css_wp_customizer );
 
 	}

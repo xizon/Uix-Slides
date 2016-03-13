@@ -25,7 +25,13 @@ function uix_slides_fun( $atts, $content = null ){
 	 
     // capture output from the widgets
 	ob_start();
-		require_once get_template_directory() . '/partials-uix-slides.php';
+	
+	    if( !UixSlides::tempfile_exists() ) {
+			require_once WP_PLUGIN_DIR .'/'.UixSlides::get_slug(). '/theme_templates/partials-uix-slides.php';
+		} else {
+			require_once get_template_directory() . '/partials-uix-slides.php';
+		}
+		
 		$out = ob_get_contents();
 	ob_end_clean();
 	 

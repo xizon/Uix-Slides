@@ -84,6 +84,23 @@
 						label: 'Color',
 						value: '#333333'
 					},
+						
+		            {
+						type   : 'combobox',
+						name   : 'uix_slides_value_7',
+						label  : 'combobox',
+						values : [
+							{ text: 'Test', value: 'test' },
+							{ text: 'Test2', value: 'test2' }
+						]
+					},
+					{
+						type   : 'container',
+						name   : 'uix_slides_value_8',
+						label  : ' ',
+						html   : '<i style=color:red>but needs some styling?</i>'
+					},
+				  	
 												
 				
 				

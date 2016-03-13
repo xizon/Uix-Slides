@@ -8,13 +8,15 @@ if ( class_exists( 'Kirki' )  && class_exists( 'UixSlides' )  ) {
 	
 	global $wp_customize;
 	
+	$uix_slides_kirki_config_id = 'uix_slides_kirki_custom';
+	
 	/*
 	*
 	* Kirki customizer configuration
 	*
 	*/
 	
-	Kirki::add_config( 'uix_slides_kirki_custom', array(
+	Kirki::add_config( $uix_slides_kirki_config_id, array(
 		'capability'    => 'edit_theme_options',
 		'option_type'   => 'theme_mod',
 	) );
@@ -64,7 +66,7 @@ if ( class_exists( 'Kirki' )  && class_exists( 'UixSlides' )  ) {
 		
 
 
-	Kirki::add_field( 'uix_slides_kirki_custom', array(
+	Kirki::add_field( $uix_slides_kirki_config_id, array(
 		'type'        => 'radio',
 		'settings'    => 'custom_uix_slides_effect',
 		'label'       => __( 'Effect', 'uix-slides' ),
@@ -78,7 +80,7 @@ if ( class_exists( 'Kirki' )  && class_exists( 'UixSlides' )  ) {
 		),
 	) );
 	
-	Kirki::add_field( 'uix_slides_kirki_custom', array(
+	Kirki::add_field( $uix_slides_kirki_config_id, array(
 		'type'        => 'switch',
 		'settings'    => 'custom_uix_slides_auto',
 		'label'       => __( 'Automatically Transition', 'uix-slides' ),
@@ -88,7 +90,7 @@ if ( class_exists( 'Kirki' )  && class_exists( 'UixSlides' )  ) {
 		'priority'    => 10,
 	) );
 	
-	Kirki::add_field( 'uix_slides_kirki_custom', array(
+	Kirki::add_field( $uix_slides_kirki_config_id, array(
 		'type'        => 'slider',
 		'settings'    => 'custom_uix_slides_effect_duration',
 		'label'       => __( 'Speed of images appereance in ms', 'uix-slides' ),
@@ -104,7 +106,7 @@ if ( class_exists( 'Kirki' )  && class_exists( 'UixSlides' )  ) {
 	) );
 
 
-	Kirki::add_field( 'uix_slides_kirki_custom', array(
+	Kirki::add_field( $uix_slides_kirki_config_id, array(
 		'type'        => 'slider',
 		'settings'    => 'custom_uix_slides_speed',
 		'label'       => __( 'Delay between images in ms', 'uix-slides' ),
@@ -120,7 +122,7 @@ if ( class_exists( 'Kirki' )  && class_exists( 'UixSlides' )  ) {
 	) );
 
 	
-	Kirki::add_field( 'uix_slides_kirki_custom', array(
+	Kirki::add_field( $uix_slides_kirki_config_id, array(
 		'type'        => 'switch',
 		'settings'    => 'custom_uix_slides_arr_nav',
 		'label'       => __( 'Show Arrow Navigation', 'uix-slides' ),
@@ -131,7 +133,7 @@ if ( class_exists( 'Kirki' )  && class_exists( 'UixSlides' )  ) {
 	) );
 	
 
-	Kirki::add_field( 'uix_slides_kirki_custom', array(
+	Kirki::add_field( $uix_slides_kirki_config_id, array(
 		'type'        => 'switch',
 		'settings'    => 'custom_uix_slides_paging_nav',
 		'label'       => __( 'Show Paging Navigation', 'uix-slides' ),
@@ -142,7 +144,7 @@ if ( class_exists( 'Kirki' )  && class_exists( 'UixSlides' )  ) {
 	) );
 
 
-	Kirki::add_field( 'uix_slides_kirki_custom', array(
+	Kirki::add_field( $uix_slides_kirki_config_id, array(
 		'type'        => 'switch',
 		'settings'    => 'custom_uix_slides_animloop',
 		'label'       => __( 'Animation Loop', 'uix-slides' ),
@@ -152,7 +154,7 @@ if ( class_exists( 'Kirki' )  && class_exists( 'UixSlides' )  ) {
 		'priority'    => 10,
 	) );
 
-	Kirki::add_field( 'uix_slides_kirki_custom', array(
+	Kirki::add_field( $uix_slides_kirki_config_id, array(
 		'type'        => 'switch',
 		'settings'    => 'custom_uix_slides_smoothheight',
 		'label'       => __( 'Smooth Height', 'uix-slides' ),
@@ -163,7 +165,7 @@ if ( class_exists( 'Kirki' )  && class_exists( 'UixSlides' )  ) {
 	) );
 
 
-	Kirki::add_field( 'uix_slides_kirki_custom', array(
+	Kirki::add_field( $uix_slides_kirki_config_id, array(
 		'type'        => 'switch',
 		'settings'    => 'custom_uix_slides_textinfo',
 		'label'       => __( 'Show Text Information', 'uix-slides' ),
@@ -174,7 +176,7 @@ if ( class_exists( 'Kirki' )  && class_exists( 'UixSlides' )  ) {
 	) );
 
 
-	Kirki::add_field( 'uix_slides_kirki_custom', array(
+	Kirki::add_field( $uix_slides_kirki_config_id, array(
 		'type'        => 'custom',
 		'settings'    => 'custom_uix_slides_box_height_title',
 		'label'       => __( 'Slider Height', 'uix-slides' ),
@@ -184,7 +186,7 @@ if ( class_exists( 'Kirki' )  && class_exists( 'UixSlides' )  ) {
 		'priority'    => 10,
 	) );
 
-	Kirki::add_field( 'uiuxlabtheme_kirki_custom', array(
+	Kirki::add_field( $uix_slides_kirki_config_id, array(
 		'type'        => 'checkbox',
 		'settings'    => 'custom_uix_slides_box_autoheight',
 		'label'       => __( 'Automatic height', 'uix-slides' ),
@@ -195,7 +197,7 @@ if ( class_exists( 'Kirki' )  && class_exists( 'UixSlides' )  ) {
 	
 	) );
 	
-	Kirki::add_field( 'uiuxlabtheme_kirki_custom', array(
+	Kirki::add_field( $uix_slides_kirki_config_id, array(
 		'type'        => 'dimension',
 		'settings'    => 'custom_uix_slides_box_height',
 		'label'       => '',
@@ -215,7 +217,7 @@ if ( class_exists( 'Kirki' )  && class_exists( 'UixSlides' )  ) {
 		),
 	) );
 	
-	Kirki::add_field( 'uix_slides_kirki_custom', array(
+	Kirki::add_field( $uix_slides_kirki_config_id, array(
 		'type'        => 'custom',
 		'settings'    => 'custom_uix_slides_box_width_title',
 		'label'       => __( 'Slider Width', 'uix-slides' ),
@@ -225,7 +227,7 @@ if ( class_exists( 'Kirki' )  && class_exists( 'UixSlides' )  ) {
 		'priority'    => 10,
 	) );
 	
-	Kirki::add_field( 'uiuxlabtheme_kirki_custom', array(
+	Kirki::add_field( $uix_slides_kirki_config_id, array(
 		'type'        => 'checkbox',
 		'settings'    => 'custom_uix_slides_box_fullwidth',
 		'label'       => __( 'Full Width', 'uix-slides' ),
@@ -237,7 +239,7 @@ if ( class_exists( 'Kirki' )  && class_exists( 'UixSlides' )  ) {
 	) );
 	
 
-	Kirki::add_field( 'uiuxlabtheme_kirki_custom', array(
+	Kirki::add_field( $uix_slides_kirki_config_id, array(
 		'type'        => 'dimension',
 		'settings'    => 'custom_uix_slides_box_width',
 		'label'       => '',
@@ -260,7 +262,7 @@ if ( class_exists( 'Kirki' )  && class_exists( 'UixSlides' )  ) {
 
 
 	
-	Kirki::add_field( 'uix_slides_kirki_custom', array(
+	Kirki::add_field( $uix_slides_kirki_config_id, array(
 		'type'        => 'custom',
 		'settings'    => 'custom_uix_slides_single_size_title',
 		'label'       => __( 'Image Size for Entry', 'uix-slides' ),
@@ -271,7 +273,7 @@ if ( class_exists( 'Kirki' )  && class_exists( 'UixSlides' )  ) {
 	) );
 
 
-	Kirki::add_field( 'uix_slides_kirki_custom', array(
+	Kirki::add_field( $uix_slides_kirki_config_id, array(
 		'type'        => 'text',
 		'settings'    => 'custom_uix_slides_single_size_w',
 		'label'       => '',
@@ -281,7 +283,7 @@ if ( class_exists( 'Kirki' )  && class_exists( 'UixSlides' )  ) {
 		'priority'    => 10
 	) );
 	
-	Kirki::add_field( 'uix_slides_kirki_custom', array(
+	Kirki::add_field( $uix_slides_kirki_config_id, array(
 		'type'        => 'text',
 		'settings'    => 'custom_uix_slides_single_size_h',
 		'label'       => '',
@@ -292,91 +294,291 @@ if ( class_exists( 'Kirki' )  && class_exists( 'UixSlides' )  ) {
 	) );
 	
 
-	Kirki::add_field( 'uix_slides_kirki_custom', array(
+
+
+	/**
+	 * ----------------------  Add google fonts section. ----------------------
+	 * 
+	 */
+	
+	Kirki::add_field( $uix_slides_kirki_config_id, array(
 		'type'        => 'custom',
-		'settings'    => 'custom_uix_slides_fsize_title',
-		'label'       => __( 'Font Size', 'uix-slides' ),
+		'settings'    => 'custom_uix_slides_gf_title',
+		'label'       => __( 'Slider Title', 'uix-slides' ),
 		'description' => '',
 		'section'     => 'panel-theme-uix-slides',
 		'default'     => '',
 		'priority'    => 10,
 	) );
+	
+	
+	/**
+	 * Add the configuration.
+	 * 
+	 * will inherit these options
+	 */
 
-	Kirki::add_field( 'uiuxlabtheme_kirki_custom', array(
-		'type'        => 'dimension',
-		'settings'    => 'custom_uix_slides_fsize_t',
-		'label'       => '',
-		'description' => __( 'Slider Title', 'uix-slides' ),
-		'section'     => 'panel-theme-uix-slides',
-		'default'     => '2em',
-		'priority'    => 10,
-		'choices' => array(
-			'units' => array( 'em', 'px' )
+	Kirki::add_field( $uix_slides_kirki_config_id, array(
+		'type'     => 'select',
+		'settings' => 'custom_uix_slides_google_font_slidetitle_family',
+		'description'    => __( 'Font Family', 'uix-slides' ),
+		'section'  => 'panel-theme-uix-slides',
+		'default'  => 'Open Sans',
+		'priority' => 10,
+		'choices'  => Kirki_Fonts::get_font_choices(), //gets the list of fonts
+		'output' => array(
+			array(
+				'element'  => '.uix-slides-homepage-title',
+				'property' => 'font-family',
+			),
+		),
+		
+		
+	) );
+	
+
+	
+	Kirki::add_field( $uix_slides_kirki_config_id, array(
+		'type'     => 'slider',
+		'settings' => 'custom_uix_slides_google_font_slidetitle_weight',
+		'description'    => __( 'Font Weight', 'uix-slides' ),
+		'section'  => 'panel-theme-uix-slides',
+		'default'  => 600,
+		'priority' => 10,
+		'choices'  => array(
+			'min'  => 100,
+			'max'  => 900,
+			'step' => 100,
+		),
+	
+		'output' => array(
+			array(
+				'element'  => '.uix-slides-homepage-title',
+				'property' => 'font-weight',
+
+			),
 		),
 	) );
 	
-	
-	Kirki::add_field( 'uiuxlabtheme_kirki_custom', array(
-		'type'        => 'dimension',
-		'settings'    => 'custom_uix_slides_fsize_c',
-		'label'       => '',
-		'description' => __( 'Slider Caption', 'uix-slides' ),
-		'section'     => 'panel-theme-uix-slides',
-		'default'     => '1em',
-		'priority'    => 10,
-		'choices' => array(
-			'units' => array( 'em', 'px' )
+	Kirki::add_field( $uix_slides_kirki_config_id, array(
+		'type'      => 'slider',
+		'settings'  => 'custom_uix_slides_google_font_slidetitle_size',
+		'description'     => __( 'Font Size', 'uix-slides' ),
+		'section'   => 'panel-theme-uix-slides',
+		'default'   => 32,
+		'priority'  => 10,
+		'choices'   => array(
+			'min'   => 7,
+			'max'   => 200,
+			'step'  => 1,
+		),
+		'output' => array(
+			array(
+				'element'  => '.uix-slides-homepage-title',
+				'property' => 'font-size',
+				'units'    => 'px',
+
+			),
+		),
+		'transport' => 'postMessage',
+		'js_vars'   => array(
+			array(
+				'element'  => '.uix-slides-homepage-title',
+				'function' => 'css',
+				'property' => 'font-size',
+				'units'    => 'px'
+			),
 		),
 	) );
+	
+	/**
+	 * ----------------------  Add google fonts section. ----------------------
+	 * 
+	 */
+	
+	Kirki::add_field( $uix_slides_kirki_config_id, array(
+		'type'        => 'custom',
+		'settings'    => 'custom_uix_slides_gf_caption',
+		'label'       => __( 'Slider Title', 'uix-slides' ),
+		'description' => '',
+		'section'     => 'panel-theme-uix-slides',
+		'default'     => '',
+		'priority'    => 10,
+	) );
+	
+	
+	/**
+	 * Add the configuration.
+	 * 
+	 * will inherit these options
+	 */
+
+	Kirki::add_field( $uix_slides_kirki_config_id, array(
+		'type'     => 'select',
+		'settings' => 'custom_uix_slides_google_font_slidecaption_family',
+		'description'    => __( 'Font Family', 'uix-slides' ),
+		'section'  => 'panel-theme-uix-slides',
+		'default'  => 'Open Sans',
+		'priority' => 10,
+		'choices'  => Kirki_Fonts::get_font_choices(), //gets the list of fonts
+		'output' => array(
+			array(
+				'element'  => '.uix-slides-homepage-caption',
+				'property' => 'font-family',
+			),
+		),
+		
+		
+	) );
+
+	
+	Kirki::add_field( $uix_slides_kirki_config_id, array(
+		'type'     => 'slider',
+		'settings' => 'custom_uix_slides_google_font_slidecaption_weight',
+		'description'    => __( 'Caption Font Weight', 'uix-slides' ),
+		'section'  => 'panel-theme-uix-slides',
+		'default'  => 300,
+		'priority' => 10,
+		'choices'  => array(
+			'min'  => 100,
+			'max'  => 900,
+			'step' => 100,
+		),
+	
+		'output' => array(
+			array(
+				'element'  => '.uix-slides-homepage-caption',
+				'property' => 'font-weight',
+
+			),
+		),
+	) );
+	
+	Kirki::add_field( $uix_slides_kirki_config_id, array(
+		'type'      => 'slider',
+		'settings'  => 'custom_uix_slides_google_font_slidecaption_size',
+		'description'     => __( 'Caption Font Size', 'uix-slides' ),
+		'section'   => 'panel-theme-uix-slides',
+		'default'   => 14,
+		'priority'  => 10,
+		'choices'   => array(
+			'min'   => 7,
+			'max'   => 100,
+			'step'  => 1,
+		),
+		'output' => array(
+			array(
+				'element'  => '.uix-slides-homepage-caption',
+				'property' => 'font-size',
+				'units'    => 'px',
+
+			),
+		),
+		'transport' => 'postMessage',
+		'js_vars'   => array(
+			array(
+				'element'  => '.uix-slides-homepage-caption',
+				'function' => 'css',
+				'property' => 'font-size',
+				'units'    => 'px'
+			),
+		),
+	) );
+	
 
 
+	
 	//Read css file value
+	global $org_cssname_uix_slides;
 	global $org_csspath_uix_slides;
-	$org_csspath_uix_slides = get_template_directory_uri() .'/uix-slides-style.css';
+
+    $org_cssname_uix_slides = 'uix-slides-style.css';
+	$org_csspath_uix_slides = get_template_directory_uri() .'/'. $org_cssname_uix_slides;
+	
 	
 	function uix_slides_view_style() {
 		
+
+		global $org_cssname_uix_slides;
 		global $org_csspath_uix_slides;
-		UixSlides::init_filesystem();
-		global $wp_filesystem;
-		$style_org_code_uix_slides = $wp_filesystem->get_contents( $org_csspath_uix_slides );
 	
 		
-		echo '
-		         <div class="uix-slides-dialog-mask"></div>
-				 <div class="uix-slides-dialog" id="uix-slides-view-css-container">  
-					<textarea rows="15" style=" width:95%;" class="regular-text">'.$style_org_code_uix_slides.'</textarea>
-					<a href="javascript:" id="uix_slides_close_css" class="close button button-primary">'.__( 'Close', 'uix-slides' ).'</a>  
-				</div>
-				<script type="text/javascript">
-					
-				( function($) {
-					
-					$( function() {
-						
-						var dialog_uix_slides = $( "#uix-slides-view-css-container, .uix-slides-dialog-mask" );  
-						
-						$( "#uix_slides_view_css" ).click( function() {
-							dialog_uix_slides.show();
-						});
-						$( "#uix_slides_close_css" ).click( function() {
-							dialog_uix_slides.hide();
-						});
-					
-			
-					} );
-					
-				} ) ( jQuery );
-				
-				</script>
+		wp_nonce_field( 'customize-filesystem-nonce' );
 		
-		';	
+		// capture output from WP_Filesystem
+		ob_start();
+		
+			UixSlides::wpfilesystem_read_file( 'customize-filesystem-nonce', 'customize.php', '', $org_cssname_uix_slides, 'theme' );
+			$filesystem_uix_slides_out = ob_get_contents();
+		ob_end_clean();
+		
+		if ( empty( $filesystem_uix_slides_out ) ) {
+			
+			$style_org_code_uix_slides = UixSlides::wpfilesystem_read_file( 'customize-filesystem-nonce', 'customize.php', '', $org_cssname_uix_slides, 'theme' );
+			
+			echo '
+					 <div class="uix-slides-dialog-mask"></div>
+					 <div class="uix-slides-dialog" id="uix-slides-view-css-container">  
+						<textarea rows="15" style=" width:95%;" class="regular-text">'.$style_org_code_uix_slides.'</textarea>
+						<a href="javascript:" id="uix_slides_close_css" class="close button button-primary">'.__( 'Close', 'uix-slides' ).'</a>  
+					</div>
+					<script type="text/javascript">
+						
+					( function($) {
+						
+						"use strict";
+						
+						$( function() {
+							
+							var dialog_uix_slides = $( "#uix-slides-view-css-container, .uix-slides-dialog-mask" );  
+							
+							$( "#uix_slides_view_css" ).click( function() {
+								dialog_uix_slides.show();
+							});
+							$( "#uix_slides_close_css" ).click( function() {
+								dialog_uix_slides.hide();
+							});
+						
+				
+						} );
+						
+					} ) ( jQuery );
+					
+					</script>
+			
+			';	
+	
+		} else {
+			
+			echo '
+					
+					<script type="text/javascript">
+						
+					( function($) {
+						
+						"use strict";
+						
+						$( function() {
+							
+							$( "#uix_slides_view_css" ).attr({ "href": "'.$org_csspath_uix_slides.'", "target":"_blank" });
+				
+						} );
+						
+					} ) ( jQuery );
+					
+					</script>
+			
+			';	
+			
+			
+		}
+		
 	}
 	
     add_action( 'customize_controls_print_scripts', 'uix_slides_view_style' );
 
 
-	Kirki::add_field( 'uix_slides_kirki_custom', array(
+	Kirki::add_field( $uix_slides_kirki_config_id, array(
 		'type'        => 'custom',
 		'settings'    => 'custom_uix_slides_css_tip',
 		'label'       => __( 'Custom CSS', 'uix-slides' ),
@@ -390,7 +592,7 @@ if ( class_exists( 'Kirki' )  && class_exists( 'UixSlides' )  ) {
 		'priority'    => 10
 	) );
 	
-	Kirki::add_field( 'uix_slides_kirki_custom', array(
+	Kirki::add_field( $uix_slides_kirki_config_id, array(
 		'type'        => 'code',
 		'settings'    => 'custom_uix_slides_css',
 		'label'       => '',

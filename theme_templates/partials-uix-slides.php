@@ -33,6 +33,10 @@ $uix_slides_query_slides = new WP_Query(
 );
 
 
+if ( $uix_slides_query_slides->posts && is_array ( $uix_slides_query_slides->posts ) ) { 
+    add_action( 'wp_footer', 'uix_slides_script', 100 );
+}
+
 
 if ( !function_exists( 'uix_slides_script' ) ) {
 	function uix_slides_script() {
