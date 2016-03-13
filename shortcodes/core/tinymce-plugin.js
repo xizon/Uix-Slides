@@ -2,6 +2,7 @@
  * ************************************
  * Adding Buttons
  *
+<<<<<<< HEAD
  * @windowManager:
  
 		ed.windowManager.open( {
@@ -111,6 +112,8 @@
 		});
 					
  
+=======
+>>>>>>> origin/master
  *************************************
  */	
 

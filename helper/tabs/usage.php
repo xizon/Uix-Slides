@@ -43,7 +43,11 @@ Or, upload the plugin to wordpress, Activate it. (Access the path (/wp-content/p
         </p> 
         
          <p>
+<<<<<<< HEAD
            <?php _e( '<h4 class="uix-bg-custom-title">4. You can pretty much custom every aspect of the look and feel of this page by modifying the <code>*.php</code> template files <strong>(Access the path to the themes directory)</strong> . Best Practices for Editing WordPress Template Files:</h4>', 'uix-slides' ); ?>
+=======
+           <?php _e( '4. You can pretty much custom every aspect of the look and feel of this page by modifying the <code>*.php</code> template files <strong>(Access the path to the themes directory)</strong> . Best Practices for Editing WordPress Template Files:', 'uix-slides' ); ?>
+>>>>>>> origin/master
         </p> 
         <p>
            <?php _e( '&nbsp;&nbsp;&nbsp;&nbsp;(1) WordPress comes with a theme and plugin editor as part of the core functionality. You can find it in your install by going to <strong>"Appearance > Editor"</strong> from your sidebar.', 'uix-slides' ); ?>
@@ -59,7 +63,11 @@ Or, upload the plugin to wordpress, Activate it. (Access the path (/wp-content/p
          
     
         <p>
+<<<<<<< HEAD
            <?php _e( '<h4 class="uix-bg-custom-title">5. Adding Uix Slides to Web Pages.</h4>', 'uix-slides' ); ?>
+=======
+           <?php _e( '5. <strong>Adding Uix Slides to Web Pages.</strong>', 'uix-slides' ); ?>
+>>>>>>> origin/master
         </p>   
         <p>
            <?php _e( 'There are two different ways you can add the Uix Slides widget to your site\'s pages:', 'uix-slides' ); ?>
@@ -90,10 +98,23 @@ Or, upload the plugin to wordpress, Activate it. (Access the path (/wp-content/p
         <p>
            <img src="<?php echo UixSlides::plug_directory(); ?>helper/img/customize.jpg" alt="">
         </p>  
+<<<<<<< HEAD
         <p>
            <?php _e( '<h4 class="uix-bg-custom-title">7. You can overview the original styles to overwrite it. It will be on creating new styles to your website, without modifying original <code>.css</code> files. Go to <strong>"Appearance -> Customize"</strong>.</h4>', 'uix-slides' ); ?>
+=======
+        
+        <p>
+           <?php _e( '7. You can overview the original styles to overwrite it. It will be on creating new styles to your website, without modifying original <code>.css</code> files. Go to <strong>"Appearance -> Customize"</strong>.', 'uix-slides' ); ?>
+>>>>>>> origin/master
         </p>   
         <p>
            <img src="<?php echo UixSlides::plug_directory(); ?>helper/img/css.jpg" alt="">
         </p>  
+<<<<<<< HEAD
 <?php } ?>
+=======
+
+        
+
+<?php } ?>
+>>>>>>> origin/master
