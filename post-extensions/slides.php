@@ -187,7 +187,8 @@ function uix_slides_remove_permalink() {
 			echo '
 			<style>
 		    	#edit-slug-box,
-				#post-preview
+				#post-preview,
+				.notice-success > p > a
 				{display:none;}
 			</style>';
 	}
