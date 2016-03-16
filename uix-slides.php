@@ -439,7 +439,12 @@ class UixSlides {
 					} 
 				}
 		
-				return __( '<div class="notice notice-success"><p>Operation successfully completed!</p></div>', 'uix-slides' );
+				if ( self::tempfile_exists() ) {
+					return __( '<div class="notice notice-success"><p>Operation successfully completed!</p></div>', 'uix-slides' );
+				} else {
+					return __( '<div class="notice notice-error"><p><strong>There was a problem copying your template files:</strong> 
+Your host root directory in WordPress can not be found. Please check your server settings. You can upload files to theme templates directory using FTP.</p></div>', 'uix-slides' );
+				}
 				
 		  } 
 	}	 
