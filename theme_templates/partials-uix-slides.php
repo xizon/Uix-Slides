@@ -75,23 +75,27 @@ if ( !function_exists( 'uix_slides_script' ) ) {
                     
                 
                     //captions
-                    var sliderHeight = slider.height();
-                    var sliderWidth = slider.width();
-                    $( '.uix-slides-homepage-content' ).each( function( index ) {
-                        
-                        var capWidth;
-                        if ( sliderWidth > 767 ) {
-                            capWidth = sliderWidth*0.35;
-                        } else {
-                            capWidth = sliderWidth*0.7;
-                        }
-                        $( this ).css( { 'width': capWidth + 'px' } );
-                        
-                        
-                        var capHeight = $( this ).height();
-                        $( this ).css( { 'top': (sliderHeight - capHeight)/2 + 'px', 'left': (sliderWidth - capWidth)/2 + 'px' } );
-                    });
-                    
+					$( '.uix-slides-homepage-content' ).hide();
+					setTimeout( function(){
+						var sliderHeight = slider.height();
+						var sliderWidth = slider.width();
+						$( '.uix-slides-homepage-content' ).each( function( index ) {
+							
+							var capWidth;
+							if ( sliderWidth > 767 ) {
+								capWidth = sliderWidth*0.35;
+							} else {
+								capWidth = sliderWidth*0.7;
+							}
+							$( this ).css( { 'width': capWidth + 'px' } );
+							
+							
+							var capHeight = $( this ).height();
+							$( this ).css( { 'top': (sliderHeight - capHeight)/2 + 'px', 'left': (sliderWidth - capWidth)/2 + 'px' } );
+						});
+						
+
+					}, <?php echo get_theme_mod( 'custom_uix_slides_effect_duration', 600 ); ?>);
     
                 },
                 end: function(slider) {//Fires when the slider reaches the last slide (asynchronous).
