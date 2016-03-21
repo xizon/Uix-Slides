@@ -72,7 +72,6 @@ if ( !function_exists( 'uix_slides_script' ) ) {
 					
 					
 					//captions
-					$( '.uix-slides-homepage-content' ).hide();
 					setTimeout( function(){
 						var sliderHeight = slider.height();
 						var sliderWidth = slider.width();
@@ -88,7 +87,7 @@ if ( !function_exists( 'uix_slides_script' ) ) {
 							
 							
 							var capHeight = $( this ).height();
-							$( this ).css( { 'top': (sliderHeight - capHeight)/2 + 'px', 'left': (sliderWidth - capWidth)/2 + 'px' } ).fadeIn(300);
+							$( this ).css( { 'top': (sliderHeight - capHeight)/2 + 'px', 'left': (sliderWidth - capWidth)/2 + 'px' } ).animate( { 'opacity': 1 }, slider.vars.animationSpeed, slider.vars.easing );
 							
 						});
 	
