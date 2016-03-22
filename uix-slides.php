@@ -1,10 +1,10 @@
 <?php
 /*
 Plugin Name: Uix Slides
-Plugin URI: http://uiux.cc/wp-plugins/uix-slides/
+Plugin URI: https://uiux.cc/wp-plugins/uix-slides/
 Description: This plugin is a simple way to build, organize and display beautiful content slides into any existing WordPress theme.  
 Author: UIUX Lab
-Author URI: http://uiux.cc
+Author URI: https://uiux.cc
 Version: 1.0.0
 Text Domain: uix-slides
 License: GPLv2 or later
@@ -212,7 +212,7 @@ class UixSlides {
 	
 		require_once 'inc/plugin-update-checker.php';
 		$myUpdateChecker = PucFactory::buildUpdateChecker(
-			'http://uiux.cc/wp-plugins/'.self::get_slug().'/update/info.json',
+			'https://uiux.cc/wp-plugins/'.self::get_slug().'/update/info.json',
 			__FILE__
 		);
 
