@@ -4,7 +4,7 @@ This is a WordPress Plugin. This plugin is a simple way to build, organize and d
 Copyright (c) 2016 UIUX Lab [@uiux_lab](http://twitter.com/uiux_lab)
 
 
-[Plugin URI](http://uiux.cc/wp-plugins/uix-slides/)
+[Plugin URI](https://uiux.cc/wp-plugins/uix-slides/)
 
 ### Licensing
 
