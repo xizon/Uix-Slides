@@ -194,3 +194,20 @@ function uix_slides_remove_permalink() {
 	}
 }
 add_action( 'admin_head', 'uix_slides_remove_permalink' );
+
+
+/*
+ * Remove comments metabox of "page" but still allow comments
+ *
+*/
+
+if ( is_admin() ) {
+    function uix_slides_remove_meta_boxes() {
+       remove_meta_box( 'commentstatusdiv', 'uix-slides', 'normal' );
+	   remove_meta_box( 'commentsdiv', 'uix-slides', 'normal' );
+	   remove_meta_box( 'slugdiv', 'uix-slides', 'normal' );
+	
+    }
+    add_action( 'admin_menu', 'uix_slides_remove_meta_boxes' );
+	
+}

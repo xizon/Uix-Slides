@@ -151,9 +151,10 @@ if ( !function_exists( 'uix_slides_script' ) ) {
 						$url        = get_post_meta( get_the_ID(), 'uix_slide_url', true );
 						$url_target = get_post_meta( get_the_ID(), 'uix_slide_target', true );
 						$url_target = ( $url_target == true ) ? ' target="_blank" ' : ''; 
-						$text_color = get_post_meta( get_the_ID(), 'uix_slide_textcolor', true );
-						if ( $text_color == '' ) $text_color = '#ffffff';
-	
+						$title_color = ( get_post_meta( get_the_ID(), 'uix_slide_title_color', true ) == '' ) ? '#ffffff' : get_post_meta( get_the_ID(), 'uix_slide_title_color', true ); 
+						$caption_color = ( get_post_meta( get_the_ID(), 'uix_slide_caption_color', true ) == '' ) ? '#ffffff' : get_post_meta( get_the_ID(), 'uix_slide_caption_color', true ); 
+					
+
 						?>
     
 						<li data-id="slide-<?php echo get_the_ID(); ?>">
@@ -165,10 +166,10 @@ if ( !function_exists( 'uix_slides_script' ) ) {
                                 <?php } ?>
         
                                 <div class="uix-slides-homepage-inner">
-                                    <div class="uix-slides-homepage-content" style="border-color:<?php echo $text_color; ?>">
-                                        <div class="uix-slides-homepage-title" style="color:<?php echo $text_color; ?>"><?php the_title(); ?></div>
+                                    <div class="uix-slides-homepage-content" style="border-color:<?php echo $title_color; ?>">
+                                        <div class="uix-slides-homepage-title" style="color:<?php echo $title_color; ?>"><?php the_title(); ?></div>
                                         <?php if ( $caption ) { ?>
-                                            <div class="uix-slides-homepage-caption" style="color:<?php echo $text_color; ?>"><?php echo $caption; ?></div>
+                                            <div class="uix-slides-homepage-caption" style="color:<?php echo $caption_color; ?>"><?php echo $caption; ?></div>
                                         <?php } ?>
                                     </div><!-- .uix-slides-content -->
                                 </div>

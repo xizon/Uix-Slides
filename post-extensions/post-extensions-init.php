@@ -33,8 +33,6 @@ function uix_slides_metaboxes( array $meta_boxes ) {
 		),
 	);
 
-
-	// Slides
 	$meta_boxes[] = array(
 		'id'			=> 'uix-slides-meta',
 		'title'			=> __( 'Slider Settings', 'uix-slides' ),
@@ -43,6 +41,44 @@ function uix_slides_metaboxes( array $meta_boxes ) {
 		'priority'		=> 'high',
 		'show_names'	=> true,
 		'fields'		=> array(
+		
+			array(
+				'name'	=> __( 'Caption', 'uix-slides' ),
+				'desc'	=>  '',
+				'id'	=> 'uix_slide_caption',
+				'type'	=> 'textarea_small',
+				
+			),
+			
+			array(
+				'name'    => __( 'Title Color', 'uix-slides' ),
+				'desc'    => '',
+				'id'      => 'uix_slide_title_color',
+				'type'    => 'colorpicker',
+				'default' => '#ffffff'
+			),
+			
+			array(
+				'name'    => __( 'Caption Color', 'uix-slides' ),
+				'desc'    => '',
+				'id'      => 'uix_slide_caption_color',
+				'type'    => 'colorpicker',
+				'default' => '#ffffff'
+			),
+			
+
+		),
+	);
+
+
+	$meta_boxes[] = array(
+		'id'			=> 'uix-slides-url-meta',
+		'title'			=> __( 'URL Settings', 'uix-slides' ),
+		'pages'			=> array( 'uix-slides' ),
+		'context'		=> 'normal',
+		'priority'		=> 'high',
+		'show_names'	    => true,
+		'fields'		    => array(
 			array(
 				'name'	=> __( 'URL', 'uix-slides' ),
 				'desc'	=>  __( 'Enter a custom URL to link this slide to. Don\'t forget the http// at the front!', 'uix-slides' ),
@@ -58,25 +94,12 @@ function uix_slides_metaboxes( array $meta_boxes ) {
 				'default' => false
 				
 			),
-			array(
-				'name'	=> __( 'Caption', 'uix-slides' ),
-				'desc'	=>  '',
-				'id'	=> 'uix_slide_caption',
-				'type'	=> 'textarea_small',
-				
-			),
 			
-			array(
-				'name'    => __( 'Text & Border Color', 'uix-slides' ),
-				'desc'    => '',
-				'id'      => 'uix_slide_textcolor',
-				'type'    => 'colorpicker',
-				'default' => '#ffffff'
-			),
 			
 
 		),
 	);
+
 
 
 	return $meta_boxes;
