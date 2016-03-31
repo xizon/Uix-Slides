@@ -76,8 +76,8 @@ if ( !function_exists( 'uix_slides_script' ) ) {
                 
                     //captions
 					setTimeout( function(){
-						var sliderHeight = slider.height();
-						var sliderWidth = slider.width();
+						var sliderHeight = $( '#uix-slides-wrap' ).height();
+						var sliderWidth = $( '#uix-slides-wrap' ).width();
 						$( '.uix-slides-homepage-content' ).each( function( index ) {
 							
 							var capWidth;
