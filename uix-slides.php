@@ -56,7 +56,7 @@ class UixSlides {
 		wp_enqueue_style( 'flexslider-2.5.0', self::plug_directory() .'assets/css/flexslider.css', false, '2.5.0', 'all' );
 		
 		// Easing
-		wp_enqueue_script( 'jquery-easing-1.3', self::plug_directory() .'assets/js/jquery.easing.js', false, '1.3', false );	
+		wp_enqueue_script( 'jquery-easing-1.3', self::plug_directory() .'assets/js/jquery.easing.js', array( 'jquery' ), '1.3', false );	
 		
 		// cherryfullBgSlider
 		wp_enqueue_script( 'js-cherryfullBgSlider-1.0', self::plug_directory() .'assets/js/cherryfullBgSlider.js', array( 'jquery' ), '1.0', true );	
