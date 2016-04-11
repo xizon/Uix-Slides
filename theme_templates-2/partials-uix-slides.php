@@ -64,7 +64,6 @@ if ( !function_exists( 'uix_slides_script' ) ) {
 				selector          : '.slides > li',
 				prevText          : '<span class="flex-custom-dir flex-custom-dir-prev"></span>',
 				nextText          : '<span class="flex-custom-dir flex-custom-dir-next"></span>',
-				controlsContainer : ".flexslider-container",
 				start: function(slider) {//Fires when the slider loads the first slide
 					slider.removeClass( 'flexslider-loading' );
 					slider.slides.find( 'img' ).css( { 'opacity': 0 } );
