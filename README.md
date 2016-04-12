@@ -28,6 +28,7 @@ Initial Release.
 - WP 4.3.*
 - WP 4.4.1
 - WP 4.4.2
+- WP 4.5
 
 
 ###Credits
