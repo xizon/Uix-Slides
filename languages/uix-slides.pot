@@ -5,7 +5,7 @@ msgstr ""
 "Project-Id-Version: Uix Slides 1.0.0\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/tags/_s\n"
 "POT-Creation-Date: 2015-06-12 21:51:31+0000\n"
-"POT-Revision-Date: Thu Mar 17 2016 02:53:14 GMT+0800 (CST)\n"
+"POT-Revision-Date: Sun Apr 17 2016 10:59:33 GMT+0800 (CST)\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -29,7 +29,7 @@ msgid "Uix Slides"
 msgstr ""
 
 #. URI of the plugin
-msgid "http://uiux.cc/wp-plugins/uix-slides"
+msgid "https://uiux.cc/wp-plugins/uix-slides"
 msgstr ""
 
 #. Description of the plugin
@@ -43,7 +43,7 @@ msgid "UIUX Lab"
 msgstr ""
 
 #. Author URI of the plugin
-msgid "http://uiux.cc"
+msgid "https://uiux.cc"
 msgstr ""
 
 #: ../uix-slides.php:147 ../customizer-extras/options-init.php:54
@@ -214,8 +214,7 @@ msgstr ""
 msgid "Max Height (in px)"
 msgstr ""
 
-#: ../customizer-extras/options-init.php:307 ../customizer-extras/options-init.
-#: php:402
+#: ../customizer-extras/options-init.php:307
 msgid "Slider Title"
 msgstr ""
 
@@ -232,6 +231,10 @@ msgstr ""
 #: ../customizer-extras/options-init.php:366 ../customizer-
 #: extras/kirki/includes/class-kirki-toolkit.php:100
 msgid "Font Size"
+msgstr ""
+
+#: ../customizer-extras/options-init.php:402
+msgid "Slider Caption"
 msgstr ""
 
 #: ../customizer-extras/options-init.php:438
@@ -687,34 +690,42 @@ msgstr ""
 msgid "Slider Image"
 msgstr ""
 
-#: ../post-extensions/post-extensions-init.php:40
+#: ../post-extensions/post-extensions-init.php:38
 msgid "Slider Settings"
 msgstr ""
 
-#: ../post-extensions/post-extensions-init.php:47 ../post-extensions/slides.php:96
+#: ../post-extensions/post-extensions-init.php:46
+msgid "Caption"
+msgstr ""
+
+#: ../post-extensions/post-extensions-init.php:54
+msgid "Title Color"
+msgstr ""
+
+#: ../post-extensions/post-extensions-init.php:62
+msgid "Caption Color"
+msgstr ""
+
+#: ../post-extensions/post-extensions-init.php:76
+msgid "URL Settings"
+msgstr ""
+
+#: ../post-extensions/post-extensions-init.php:83 ../post-extensions/slides.php:96
 msgid "URL"
 msgstr ""
 
-#: ../post-extensions/post-extensions-init.php:48
+#: ../post-extensions/post-extensions-init.php:84
 msgid ""
 "Enter a custom URL to link this slide to. Don't forget the http// at the "
 "front!"
 msgstr ""
 
-#: ../post-extensions/post-extensions-init.php:54
+#: ../post-extensions/post-extensions-init.php:90
 msgid "Target"
 msgstr ""
 
-#: ../post-extensions/post-extensions-init.php:55
+#: ../post-extensions/post-extensions-init.php:91
 msgid "Open link in a new window/tab"
-msgstr ""
-
-#: ../post-extensions/post-extensions-init.php:62
-msgid "Caption"
-msgstr ""
-
-#: ../post-extensions/post-extensions-init.php:70
-msgid "Text & Border Color"
 msgstr ""
 
 #: ../post-extensions/slides.php:47

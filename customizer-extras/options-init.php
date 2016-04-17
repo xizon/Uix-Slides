@@ -365,7 +365,7 @@ if ( class_exists( 'Kirki' )  && class_exists( 'UixSlides' )  ) {
 		'settings'  => 'custom_uix_slides_google_font_slidetitle_size',
 		'description'     => __( 'Font Size', 'uix-slides' ),
 		'section'   => 'panel-theme-uix-slides',
-		'default'   => 32,
+		'default'   => 35,
 		'priority'  => 10,
 		'choices'   => array(
 			'min'   => 7,
@@ -399,7 +399,7 @@ if ( class_exists( 'Kirki' )  && class_exists( 'UixSlides' )  ) {
 	Kirki::add_field( $uix_slides_kirki_config_id, array(
 		'type'        => 'custom',
 		'settings'    => 'custom_uix_slides_gf_caption',
-		'label'       => __( 'Slider Title', 'uix-slides' ),
+		'label'       => __( 'Slider Caption', 'uix-slides' ),
 		'description' => '',
 		'section'     => 'panel-theme-uix-slides',
 		'default'     => '',
