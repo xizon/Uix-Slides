@@ -72,7 +72,7 @@ if ( class_exists( 'Kirki' )  && class_exists( 'UixSlides' )  ) {
 		'label'       => __( 'Effect', 'uix-slides' ),
 		'description' => '',
 		'section'     => 'panel-theme-uix-slides',
-		'default'     => 'slide',
+		'default'     => 'fade',
 		'priority'    => 10,
 		'choices'     => array(
 			'slide'   => __( 'Slide', 'uix-slides' ),
