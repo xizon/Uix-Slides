@@ -5,7 +5,7 @@ msgstr ""
 "Project-Id-Version: Uix Slides 1.0.0\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/tags/_s\n"
 "POT-Creation-Date: 2015-06-12 21:51:31+0000\n"
-"POT-Revision-Date: Sun Apr 17 2016 10:59:33 GMT+0800 (CST)\n"
+"POT-Revision-Date: Wed Apr 20 2016 02:39:19 GMT+0800 (CST)\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -669,19 +669,19 @@ msgstr ""
 msgid "There is no changelog available."
 msgstr ""
 
-#: ../inc/plugin-update-checker.php:637
+#: ../inc/plugin-update-checker.php:635
 msgid "Check for updates"
 msgstr ""
 
-#: ../inc/plugin-update-checker.php:681
+#: ../inc/plugin-update-checker.php:679
 msgid "This plugin is up to date."
 msgstr ""
 
-#: ../inc/plugin-update-checker.php:683
+#: ../inc/plugin-update-checker.php:681
 msgid "A new version of this plugin is available."
 msgstr ""
 
-#: ../inc/plugin-update-checker.php:685
+#: ../inc/plugin-update-checker.php:683
 #, php-format
 msgid "Unknown update checker status \"%s\""
 msgstr ""
@@ -859,4 +859,12 @@ msgstr ""
 #: 706 ../post-extensions/custom-metaboxes-and-fields/helpers/cmb_Meta_Box_types.
 #: php:768
 msgid "Download"
+msgstr ""
+
+#: ../shortcodes/core/tinymce-plugin-lang.php:13
+msgid "Insert Uix Slides"
+msgstr ""
+
+#: ../shortcodes/core/tinymce-plugin-lang.php:14
+msgid "Show at most (Show all items if value is \"-1\")"
 msgstr ""

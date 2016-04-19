@@ -133,16 +133,16 @@ var custom_uploader;
 				
 			ed.addButton( 'uix_slides_btn', {
 				text: '',
-				title: 'Uix Slides',
+				title: ed.getLang( 'uix_slides_custom_tinymce_plugin.lang_1' ),
 				image 	: url + '/icon.png',
 				onclick: function() {
 					ed.windowManager.open( {
-						title: 'Insert Uix Slides',
+						title: ed.getLang( 'uix_slides_custom_tinymce_plugin.lang_2' ),
 						body: [
 							{
 								type: 'textbox',
 								name: 'uix_slides_show',
-								label: 'Show at most (Show all items if value is "-1")',
+								label: ed.getLang( 'uix_slides_custom_tinymce_plugin.lang_3' ),
 								value: '-1'
 							},
 							
