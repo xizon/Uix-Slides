@@ -156,8 +156,9 @@
 	overflow: hidden;
 	margin-bottom:30px;
 	position:relative;
-	
-	background-size:cover;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	background-size: cover;
 	
 }
 

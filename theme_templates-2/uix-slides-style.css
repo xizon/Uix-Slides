@@ -165,7 +165,9 @@
 	background: -webkit-linear-gradient(45deg,  #3b9da7 0%,#3b9da7 39%,#3cb2be 60%,#c68286 80%,#d88c8e 100%); /* Chrome10-25,Safari5.1-6 */
 	background: linear-gradient(54deg,  #3b9da7 0%,#3b9da7 39%,#3cb2be 60%,#c68286 80%,#d88c8e 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3b9da7', endColorstr='#d88c8e',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
-	background-size:cover;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	background-size: cover;
 	
 }
 
