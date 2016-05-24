@@ -5,7 +5,7 @@ msgstr ""
 "Project-Id-Version: Uix Slides 1.0.0\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/tags/_s\n"
 "POT-Creation-Date: 2015-06-12 21:51:31+0000\n"
-"POT-Revision-Date: Wed Apr 20 2016 02:39:19 GMT+0800 (CST)\n"
+"POT-Revision-Date: Tue May 24 2016 21:26:38 GMT+0800 (CST)\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -262,26 +262,6 @@ msgstr ""
 
 #: ../customizer-extras/options-init.php:588
 msgid "CSS file root directory:"
-msgstr ""
-
-#. Name of the plugin
-msgid "Kirki Toolkit"
-msgstr ""
-
-#. URI of the plugin
-msgid "http://kirki.org"
-msgstr ""
-
-#. Description of the plugin
-msgid "The ultimate WordPress Customizer Toolkit"
-msgstr ""
-
-#. Author of the plugin
-msgid "Aristeides Stathopoulos"
-msgstr ""
-
-#. Author URI of the plugin
-msgid "http://aristeides.com"
 msgstr ""
 
 #: ../customizer-extras/kirki/includes/class-kirki-toolkit.php:52
