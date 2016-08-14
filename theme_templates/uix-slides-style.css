@@ -184,11 +184,13 @@
 
 @media (max-width: 767px) {
     .uix-slides-homepage-title {
-        font-size: 16px!important;
+		font-size: 8vw !important;
+		line-height: 8vw !important;
     }
 
     .uix-slides-homepage-caption {
-        font-size: 12px!important;
+        font-size: 3vw !important;
+		line-height: 3.625vw !important;
     }
 }
 
