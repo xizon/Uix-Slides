@@ -52,19 +52,19 @@ class UixSlides {
 	public static function frontpage_scripts() {
 	
 		// Add flexslider
-		wp_enqueue_script( 'js-flexslider-2.5.0', self::plug_directory() .'assets/js/jquery.flexslider.min.js', array( 'jquery' ), '2.5.0', true );	
-		wp_enqueue_style( 'flexslider-2.5.0', self::plug_directory() .'assets/css/flexslider.css', false, '2.5.0', 'all' );
+		wp_enqueue_script( 'flexslider', self::plug_directory() .'assets/js/jquery.flexslider.min.js', array( 'jquery' ), '2.5.0', true );	
+		wp_enqueue_style( 'flexslider', self::plug_directory() .'assets/css/flexslider.css', false, '2.5.0', 'all' );
 		
 		// Easing
-		wp_enqueue_script( 'jquery-easing-1.3', self::plug_directory() .'assets/js/jquery.easing.js', array( 'jquery' ), '1.3', false );	
+		wp_enqueue_script( 'jquery-easing', self::plug_directory() .'assets/js/jquery.easing.js', array( 'jquery' ), '1.3', false );	
 		
 		// cherryfullBgSlider
-		wp_enqueue_script( 'js-cherryfullBgSlider-1.0', self::plug_directory() .'assets/js/cherryfullBgSlider.js', array( 'jquery' ), '1.0', true );	
-		wp_enqueue_style( 'cherryfullBgSlider-1.0', self::plug_directory() .'assets/css/cherryfullBgSlider.css', false, '1.0', 'all' );
+		wp_enqueue_script( 'cherryfullBgSlider', self::plug_directory() .'assets/js/cherryfullBgSlider.js', array( 'jquery' ), '1.0', true );	
+		wp_enqueue_style( 'cherryfullBgSlider', self::plug_directory() .'assets/css/cherryfullBgSlider.css', false, '1.0', 'all' );
 		
 		//Main stylesheets and scripts to Front-End
 		if( !self::tempfile_exists() ) {
-			wp_enqueue_style( self::PREFIX . '-contact-frontend-style', self::plug_directory() .'theme_templates/uix-slides-style.css', false, self::ver(), 'all');
+			wp_enqueue_style( self::PREFIX . '-slides-frontend-style', self::plug_directory() .'theme_templates/uix-slides-style.css', false, self::ver(), 'all');
 		} else {
 			wp_enqueue_style( self::PREFIX . '-slides-frontend-style', get_template_directory_uri() .'/uix-slides-style.css', false, self::ver(), 'all');
 		}
