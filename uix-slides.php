@@ -37,11 +37,11 @@ class UixSlides {
 		add_action( 'admin_init', array( __CLASS__, 'nag_ignore' ) );
 		add_action( 'admin_menu', array( __CLASS__, 'options_admin_menu' ) );
 		add_action( 'wp_head', array( __CLASS__, 'do_my_shortcodes' ) );
-		add_action( 'init', array( __CLASS__, 'customizer' ) );
 		add_action( 'after_setup_theme', array( __CLASS__, 'image_sizes' ) );
 		
 
 	}
+	
 	
 	
 	/*
@@ -286,22 +286,6 @@ class UixSlides {
 		}
 
 	}
-	
-	/*
-	 * Building WordPress themes using the Kirki Customizer
-	 *
-	 *
-	 */
-	public static function customizer() {
-		
-		if ( !class_exists( 'Kirki' ) ) {
-		    require_once 'customizer-extras/kirki/kirki.php';
-		}
-		
-		require_once 'customizer-extras/options-init.php';
-
-
-	}	
 	
 
 	
@@ -630,3 +614,4 @@ class UixSlides {
 
 add_action( 'plugins_loaded', array( 'UixSlides', 'init' ) );
 UixSlides::post_ex();
+

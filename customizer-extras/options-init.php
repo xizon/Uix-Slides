@@ -6,44 +6,11 @@
 
 if ( class_exists( 'Kirki' )  && class_exists( 'UixSlides' )  ) {
 	
-	global $wp_customize;
+	
 	
 	$uix_slides_kirki_config_id = 'uix_slides_kirki_custom';
 	
-	/*
-	*
-	* Kirki customizer configuration
-	*
-	*/
 	
-	Kirki::add_config( $uix_slides_kirki_config_id, array(
-		'capability'    => 'edit_theme_options',
-		'option_type'   => 'theme_mod',
-	) );
-	
-
-	
-	
-	//Function of "Allowing html in text"
-	function uix_slides_kirki_do_not_filter_anything( $value ) {
-		return $value;
-	}
-		
-	
-			
-	//This function adds some styles to the WordPress Customizer
-	function uix_slides_kirki_custom_style() {
-	
-		wp_enqueue_style( 'kirki-customizer-custom-css', UixSlides::plug_directory() .  'customizer-extras/css/main.css', null, null );
-
-	}
-	if ( $wp_customize ) {
-	
-		add_action( 'customize_controls_print_styles', 'uix_slides_kirki_custom_style', 100 );
-		
-	}
-	
-
 
     /*
      * ------------------------------------------------------------------------------------------------
@@ -203,18 +170,8 @@ if ( class_exists( 'Kirki' )  && class_exists( 'UixSlides' )  ) {
 		'label'       => '',
 		'description' => __( 'The slider container height in pixels. ', 'uix-slides' ),
 		'section'     => 'panel-theme-uix-slides',
-		'default'     => 600,
-		'priority'    => 10,
-		'choices' => array(
-			'units' => array( 'px' )
-		),
-		'required'    => array(
-			array(
-				'setting'  => 'custom_uix_slides_box_autoheight',
-				'operator' => '==',
-				'value'    => false,
-			),
-		),
+		'default'     => '600px',
+		'priority'    => 10
 	) );
 	
 	Kirki::add_field( $uix_slides_kirki_config_id, array(
@@ -245,18 +202,8 @@ if ( class_exists( 'Kirki' )  && class_exists( 'UixSlides' )  ) {
 		'label'       => '',
 		'description' => __( 'The slider container width in pixels. ', 'uix-slides' ),
 		'section'     => 'panel-theme-uix-slides',
-		'default'     => 1440,
-		'priority'    => 10,
-		'choices' => array(
-			'units' => array( 'px' )
-		),
-		'required'    => array(
-			array(
-				'setting'  => 'custom_uix_slides_box_fullwidth',
-				'operator' => '==',
-				'value'    => false,
-			),
-		),
+		'default'     => '1440px',
+		'priority'    => 10
 	) );
 	
 
@@ -487,97 +434,6 @@ if ( class_exists( 'Kirki' )  && class_exists( 'UixSlides' )  ) {
 	
 
 
-	
-	//Read css file value
-	global $org_cssname_uix_slides;
-	global $org_csspath_uix_slides;
-
-    $org_cssname_uix_slides = 'uix-slides-style.css';
-	$org_csspath_uix_slides = get_template_directory_uri() .'/'. $org_cssname_uix_slides;
-	
-	
-	function uix_slides_view_style() {
-		
-
-		global $org_cssname_uix_slides;
-		global $org_csspath_uix_slides;
-	
-		
-		wp_nonce_field( 'customize-filesystem-nonce' );
-		
-		// capture output from WP_Filesystem
-		ob_start();
-		
-			UixSlides::wpfilesystem_read_file( 'customize-filesystem-nonce', 'customize.php', '', $org_cssname_uix_slides, 'theme' );
-			$filesystem_uix_slides_out = ob_get_contents();
-		ob_end_clean();
-		
-		if ( empty( $filesystem_uix_slides_out ) ) {
-			
-			$style_org_code_uix_slides = UixSlides::wpfilesystem_read_file( 'customize-filesystem-nonce', 'customize.php', '', $org_cssname_uix_slides, 'theme' );
-			
-			echo '
-					 <div class="uix-slides-dialog-mask"></div>
-					 <div class="uix-slides-dialog" id="uix-slides-view-css-container">  
-						<textarea rows="15" style=" width:95%;" class="regular-text">'.$style_org_code_uix_slides.'</textarea>
-						<a href="javascript:" id="uix_slides_close_css" class="close button button-primary">'.__( 'Close', 'uix-slides' ).'</a>  
-					</div>
-					<script type="text/javascript">
-						
-					( function($) {
-						
-						"use strict";
-						
-						$( function() {
-							
-							var dialog_uix_slides = $( "#uix-slides-view-css-container, .uix-slides-dialog-mask" );  
-							
-							$( "#uix_slides_view_css" ).click( function() {
-								dialog_uix_slides.show();
-							});
-							$( "#uix_slides_close_css" ).click( function() {
-								dialog_uix_slides.hide();
-							});
-						
-				
-						} );
-						
-					} ) ( jQuery );
-					
-					</script>
-			
-			';	
-	
-		} else {
-			
-			echo '
-					
-					<script type="text/javascript">
-						
-					( function($) {
-						
-						"use strict";
-						
-						$( function() {
-							
-							$( "#uix_slides_view_css" ).attr({ "href": "'.$org_csspath_uix_slides.'", "target":"_blank" });
-				
-						} );
-						
-					} ) ( jQuery );
-					
-					</script>
-			
-			';	
-			
-			
-		}
-		
-	}
-	
-    add_action( 'customize_controls_print_scripts', 'uix_slides_view_style' );
-
-
 	Kirki::add_field( $uix_slides_kirki_config_id, array(
 		'type'        => 'custom',
 		'settings'    => 'custom_uix_slides_css_tip',
@@ -586,7 +442,7 @@ if ( class_exists( 'Kirki' )  && class_exists( 'UixSlides' )  ) {
 		'section'     => 'panel-theme-uix-slides',
 		'default'     => '
         <p>'.__( 'CSS file root directory:', 'uix-slides' ).'
-            <a href="javascript:" id="uix_slides_view_css" >'.$org_csspath_uix_slides.'</a>
+            <a href="'.get_template_directory_uri().'/uix-slides-style.css" id="uix_slides_view_css" target="_blank" >'.get_template_directory_uri().'/uix-slides-style.css</a>
         </p>  
 		',
 		'priority'    => 10
