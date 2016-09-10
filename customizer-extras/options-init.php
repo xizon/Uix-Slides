@@ -171,7 +171,15 @@ if ( class_exists( 'Kirki' )  && class_exists( 'UixSlides' )  ) {
 		'description' => __( 'The slider container height in pixels. ', 'uix-slides' ),
 		'section'     => 'panel-theme-uix-slides',
 		'default'     => '600px',
-		'priority'    => 10
+		'priority'    => 10,
+		'required'    => array(
+			array(
+				'setting'  => 'custom_uix_slides_box_autoheight',
+				'operator' => '==',
+				'value'    => false,
+			),
+		),
+
 	) );
 	
 	Kirki::add_field( $uix_slides_kirki_config_id, array(
@@ -191,7 +199,7 @@ if ( class_exists( 'Kirki' )  && class_exists( 'UixSlides' )  ) {
 		'description' => __( 'When checked, allow slider to display in full width that will keep width/height proportions.', 'uix-slides' ),
 		'section'     => 'panel-theme-uix-slides',
 		'default'     => true,
-		'priority'    => 10,
+		'priority'    => 10
 	
 	) );
 	
@@ -203,7 +211,14 @@ if ( class_exists( 'Kirki' )  && class_exists( 'UixSlides' )  ) {
 		'description' => __( 'The slider container width in pixels. ', 'uix-slides' ),
 		'section'     => 'panel-theme-uix-slides',
 		'default'     => '1440px',
-		'priority'    => 10
+		'priority'    => 10,
+		'required'    => array(
+			array(
+				'setting'  => 'custom_uix_slides_box_fullwidth',
+				'operator' => '==',
+				'value'    => false,
+			),
+		),
 	) );
 	
 
