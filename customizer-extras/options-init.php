@@ -281,77 +281,29 @@ if ( class_exists( 'Kirki' )  && class_exists( 'UixSlides' )  ) {
 	 */
 
 	Kirki::add_field( $uix_slides_kirki_config_id, array(
-		'type'     => 'select',
+		'type'     => 'typography',
 		'settings' => 'custom_uix_slides_google_font_slidetitle_family',
 		'description'    => __( 'Font Family', 'uix-slides' ),
 		'section'  => 'panel-theme-uix-slides',
-		'default'  => 'Open Sans',
-		'priority' => 10,
-		'choices'  => Kirki_Fonts::get_font_choices(), //gets the list of fonts
-		'output' => array(
+		'default'     => array(
+			'font-family'    => 'Open Sans',
+			'variant'        => '700',
+			'font-size'      => '35px',
+			'letter-spacing' => '0',
+			'subsets'        => array( 'latin-ext' ),
+			'text-transform' => 'none',
+		),
+		'priority'    => 10,
+		'output'      => array(
 			array(
-				'element'  => '.uix-slides-homepage-title',
-				'property' => 'font-family',
+				'element' => '.uix-slides-homepage-title',
 			),
 		),
 		
-		
 	) );
 	
 
-	
-	Kirki::add_field( $uix_slides_kirki_config_id, array(
-		'type'     => 'slider',
-		'settings' => 'custom_uix_slides_google_font_slidetitle_weight',
-		'description'    => __( 'Font Weight', 'uix-slides' ),
-		'section'  => 'panel-theme-uix-slides',
-		'default'  => 600,
-		'priority' => 10,
-		'choices'  => array(
-			'min'  => 100,
-			'max'  => 900,
-			'step' => 100,
-		),
-	
-		'output' => array(
-			array(
-				'element'  => '.uix-slides-homepage-title',
-				'property' => 'font-weight',
 
-			),
-		),
-	) );
-	
-	Kirki::add_field( $uix_slides_kirki_config_id, array(
-		'type'      => 'slider',
-		'settings'  => 'custom_uix_slides_google_font_slidetitle_size',
-		'description'     => __( 'Font Size', 'uix-slides' ),
-		'section'   => 'panel-theme-uix-slides',
-		'default'   => 35,
-		'priority'  => 10,
-		'choices'   => array(
-			'min'   => 7,
-			'max'   => 200,
-			'step'  => 1,
-		),
-		'output' => array(
-			array(
-				'element'  => '.uix-slides-homepage-title',
-				'property' => 'font-size',
-				'units'    => 'px',
-
-			),
-		),
-		'transport' => 'postMessage',
-		'js_vars'   => array(
-			array(
-				'element'  => '.uix-slides-homepage-title',
-				'function' => 'css',
-				'property' => 'font-size',
-				'units'    => 'px'
-			),
-		),
-	) );
 	
 	/**
 	 * ----------------------  Add google fonts section. ----------------------
@@ -376,78 +328,30 @@ if ( class_exists( 'Kirki' )  && class_exists( 'UixSlides' )  ) {
 	 */
 
 	Kirki::add_field( $uix_slides_kirki_config_id, array(
-		'type'     => 'select',
+		'type'     => 'typography',
 		'settings' => 'custom_uix_slides_google_font_slidecaption_family',
 		'description'    => __( 'Font Family', 'uix-slides' ),
 		'section'  => 'panel-theme-uix-slides',
-		'default'  => 'Open Sans',
-		'priority' => 10,
-		'choices'  => Kirki_Fonts::get_font_choices(), //gets the list of fonts
-		'output' => array(
+		'default'     => array(
+			'font-family'    => 'Open Sans',
+			'variant'        => 'regular',
+			'font-size'      => '14px',
+			'letter-spacing' => '0',
+			'subsets'        => array( 'latin-ext' ),
+			'text-transform' => 'none',
+		),
+		'priority'    => 10,
+		'output'      => array(
 			array(
-				'element'  => '.uix-slides-homepage-caption',
-				'property' => 'font-family',
+				'element' => '.uix-slides-homepage-caption',
 			),
 		),
 		
 		
 	) );
 
-	
-	Kirki::add_field( $uix_slides_kirki_config_id, array(
-		'type'     => 'slider',
-		'settings' => 'custom_uix_slides_google_font_slidecaption_weight',
-		'description'    => __( 'Caption Font Weight', 'uix-slides' ),
-		'section'  => 'panel-theme-uix-slides',
-		'default'  => 300,
-		'priority' => 10,
-		'choices'  => array(
-			'min'  => 100,
-			'max'  => 900,
-			'step' => 100,
-		),
-	
-		'output' => array(
-			array(
-				'element'  => '.uix-slides-homepage-caption',
-				'property' => 'font-weight',
 
-			),
-		),
-	) );
 	
-	Kirki::add_field( $uix_slides_kirki_config_id, array(
-		'type'      => 'slider',
-		'settings'  => 'custom_uix_slides_google_font_slidecaption_size',
-		'description'     => __( 'Caption Font Size', 'uix-slides' ),
-		'section'   => 'panel-theme-uix-slides',
-		'default'   => 14,
-		'priority'  => 10,
-		'choices'   => array(
-			'min'   => 7,
-			'max'   => 100,
-			'step'  => 1,
-		),
-		'output' => array(
-			array(
-				'element'  => '.uix-slides-homepage-caption',
-				'property' => 'font-size',
-				'units'    => 'px',
-
-			),
-		),
-		'transport' => 'postMessage',
-		'js_vars'   => array(
-			array(
-				'element'  => '.uix-slides-homepage-caption',
-				'function' => 'css',
-				'property' => 'font-size',
-				'units'    => 'px'
-			),
-		),
-	) );
-	
-
 
 	Kirki::add_field( $uix_slides_kirki_config_id, array(
 		'type'        => 'custom',
