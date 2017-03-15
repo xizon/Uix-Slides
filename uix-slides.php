@@ -5,7 +5,7 @@ Plugin URI: https://uiux.cc/wp-plugins/uix-slides/
 Description: This plugin is a simple way to build, organize and display beautiful content slides into any existing WordPress theme.  
 Author: UIUX Lab
 Author URI: https://uiux.cc
-Version: 1.0.0
+Version: 1.0.1
 Text Domain: uix-slides
 License: GPLv2 or later
 */
@@ -602,9 +602,11 @@ class UixSlides {
 	
 		$custom_css = get_theme_mod( 'custom_uix_slides_css' );
 		$custom_css_wp_customizer = '';
+		$width = get_theme_mod( 'custom_uix_slides_box_width' );
+		$height = get_theme_mod( 'custom_uix_slides_box_height' );
 		
-		$c_width = ( !empty( get_theme_mod( 'custom_uix_slides_box_width' ) ) && !get_theme_mod( 'custom_uix_slides_box_fullwidth', true ) ) ? 'width:'.get_theme_mod( 'custom_uix_slides_box_width' ).';' : '';
-		$c_height = ( !empty( get_theme_mod( 'custom_uix_slides_box_height' ) ) && !get_theme_mod( 'custom_uix_slides_box_autoheight', true ) ) ? 'height:'.get_theme_mod( 'custom_uix_slides_box_height' ).';' : '';
+		$c_width = ( !empty( $width ) && !get_theme_mod( 'custom_uix_slides_box_fullwidth', true ) ) ? 'width:'.$width.';' : '';
+		$c_height = ( !empty( $height ) && !get_theme_mod( 'custom_uix_slides_box_autoheight', true ) ) ? 'height:'.$height.';' : '';
 		
 
 	    if ( $c_width != '' || $c_height != '' ) {

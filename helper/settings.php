@@ -61,24 +61,24 @@ function uix_slides_options_page(){
 	} 
 	
 	$tabs = array();
-	$tabs[] = [
+	$tabs[] = array(
 	    'tab'     =>  'about', 
 		'title'   =>  __( 'About', 'uix-slides' )
-	];
-	$tabs[] = [
+	);
+	$tabs[] = array(
 	    'tab'     =>  'usage', 
 		'title'   =>  __( 'How to use?', 'uix-slides' )
-	];
+	);
 	
-	$tabs[] = [
+	$tabs[] = array(
 	    'tab'     =>  'credits', 
 		'title'   =>  __( 'Credits', 'uix-slides' )
-	];
+	);
 	
-	$tabs[] = [
+	$tabs[] = array(
 	    'tab'     =>  'temp', 
 		'title'   =>  __( 'Template Files', 'uix-slides' )
-	];
+	);
 	
 	?>
     <h2 class="nav-tab-wrapper">
