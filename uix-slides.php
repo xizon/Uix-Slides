@@ -5,7 +5,7 @@ Plugin URI: https://uiux.cc/wp-plugins/uix-slides/
 Description: This plugin is a simple way to build, organize and display beautiful content slides into any existing WordPress theme.  
 Author: UIUX Lab
 Author URI: https://uiux.cc
-Version: 1.0.1
+Version: 1.0.2
 Text Domain: uix-slides
 License: GPLv2 or later
 */
@@ -52,15 +52,16 @@ class UixSlides {
 	public static function frontpage_scripts() {
 	
 		// Add flexslider
-		wp_enqueue_script( 'flexslider', self::plug_directory() .'assets/js/jquery.flexslider.min.js', array( 'jquery' ), '2.5.0', true );	
-		wp_enqueue_style( 'flexslider', self::plug_directory() .'assets/css/flexslider.css', false, '2.5.0', 'all' );
+		wp_enqueue_script( 'flexslider', self::plug_directory() .'assets/js/jquery.flexslider.min.js', array( 'jquery' ), '2.7.0', true );	
+		wp_enqueue_style( 'flexslider', self::plug_directory() .'assets/css/flexslider.min.css', false, '2.7.0', 'all' );
 		
 		// Easing
 		wp_enqueue_script( 'jquery-easing', self::plug_directory() .'assets/js/jquery.easing.js', array( 'jquery' ), '1.3', false );	
 		
 		// cherryfullBgSlider
-		wp_enqueue_script( 'cherryfullBgSlider', self::plug_directory() .'assets/js/cherryfullBgSlider.js', array( 'jquery' ), '1.0', true );	
-		wp_enqueue_style( 'cherryfullBgSlider', self::plug_directory() .'assets/css/cherryfullBgSlider.css', false, '1.0', 'all' );
+		wp_enqueue_script( 'cherryfullBgSlider', self::plug_directory() .'assets/js/cherryfullBgSlider.min.js', array( 'jquery' ), '1.0', true );	
+		wp_enqueue_style( 'cherryfullBgSlider', self::plug_directory() .'assets/css/cherryfullBgSlider.min.css', false, '1.0', 'all' );
+		
 		
 		//Main stylesheets and scripts to Front-End
 		if( !self::tempfile_exists() ) {
