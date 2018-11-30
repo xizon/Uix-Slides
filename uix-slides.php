@@ -5,7 +5,7 @@ Plugin URI: https://uiux.cc/wp-plugins/uix-slides/
 Description: This plugin is a simple way to build, organize and display beautiful content slides into any existing WordPress theme.  
 Author: UIUX Lab
 Author URI: https://uiux.cc
-Version: 1.0.2
+Version: 1.0.3
 Text Domain: uix-slides
 License: GPLv2 or later
 */
@@ -175,10 +175,12 @@ class UixSlides {
 			array( __CLASS__, 'uix_slides_options_page' )
 		);
 		
-		add_action("load-{$hook}", create_function('','
-			header("Location: '.admin_url( "customize.php" ).'");
+		add_action("load-{$hook}", function( $caps ) {
+			header( "Location: " . admin_url( "customize.php" ) );
 			exit;
-		'));
+		 });
+		 
+		 
 	
 	
         //helper
